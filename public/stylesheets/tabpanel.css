@@ -15,6 +15,12 @@ dl {
   outline: 4px solid #ccc;
 }
 
+#tabs {
+  float: right;
+  right: 0px;
+  display: inline-flex;
+}
+
 /**
    * tab panel widget
    */
@@ -153,7 +159,7 @@ dl {
    * visual cue of the selection
    */
 .tabPanel-widget input[name="tabs"]:checked + h2 {
-  background: #333;
+  /* background: #333; */
 }
 
 /**
