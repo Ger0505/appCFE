@@ -8,7 +8,7 @@ router.get("/", function (req, res, next) {
 });
 
 router.get("/prueba", function (req, res, next) {
-  res.sendFile(path.join(__dirname, "../views/colaborador/insert.html"));
+  res.sendFile(path.join(__dirname, "../views/colaborador/colaborador.html"));
 });
 
 module.exports = router;
