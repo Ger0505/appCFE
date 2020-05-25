@@ -1,0 +1,23 @@
+#tabs {
+  display: inline-flex;
+  padding-left: 70%;
+}
+
+#tabs h2 {
+  background-color: rgba(182, 182, 182, 0.897);
+}
+
+input[name="tabs"] {
+  opacity: 0.5;
+  cursor: pointer;
+  /* display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;*/
+}
+
+#tabs h2 input[name="tabs"]:checked + h2 {
+  background-color: white;
+}

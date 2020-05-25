@@ -2,7 +2,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/stylesheets/tabpanel.css"
+    <link rel="stylesheet" href="/css/tabpanel.css"
     <title>Agregar tarea</title>
   </head>
   <body>
@@ -28,25 +28,41 @@
     
     <div class="tabPanel-widget">
       <nav id="tabs">
-        <input id="tab-1" name="tabs" type="radio" tabindex="0" checked="true" aria-hidden="true">
-        <h2>Detalles</h2>
-        <input id="tab-2" name="tabs" type="radio" tabindex="0" aria-hidden="true">
-        <h2>Hora</h2>
-        <input id="tab-3" name="tabs" type="radio" tabindex="0" aria-hidden="true">
-        <h2>Archivos</h2>
+        <h2>
+          <input id="tab-1" name="tabs" type="radio" tabindex="0" checked="true" aria-hidden="true">
+          Detalles
+        </h2>
+        <h2>
+          <input id="tab-2" name="tabs" type="radio" tabindex="0" aria-hidden="true">
+          Hora
+        </h2>
+        <h2>
+          <input id="tab-3" name="tabs" type="radio" tabindex="0" aria-hidden="true">
+          Archivos
+        </h2>
       </nav>
-      <div id="detalles">
-        <p>Represents strong importance for its contents. Indicate relative importance by nesting strong elements; each strong element increases the importance of its contents. Changing the importance of a piece of text with the strong element does not change the meaning of the sentence.</p>
-        <p>Source: <a href="http://html5doctor.com/element-index/">html5doctor</a> for Strong</p>
+      <div class="contenedor">
+        <div id="detalles">
+          <p>Represents strong importance for its contents. Indicate relative importance by nesting strong elements; each strong
+            element increases the importance of its contents. Changing the importance of a piece of text with the strong element
+            does not change the meaning of the sentence.</p>
+          <p>Source: <a href="http://html5doctor.com/element-index/">html5doctor</a> for Strong</p>
+        </div>
+        <div id="hora">
+          <p>Represents a generic document or application section. In this context, a section is a thematic grouping of content,
+            typically with a header, possibly with a footer. Examples include chapters in a book, the various tabbed pages in a
+            tabbed dialog box, or the numbered sections of a thesis. A web site's home page could be split into sections for an
+            introduction, news items, contact information.</p>
+          <p>Source: <a href="http://html5doctor.com/element-index/">html5doctor</a> for Section</p>
+        </div>
+        <div id="Archivos">
+          <p>The source element allows authors to specify multiple alternative media resources for media elements. It does not
+            represent anything on its own. The src attribute gives the address of the media resource. The value must be a valid
+            non-empty URL potentially surrounded by spaces. This attribute must be present.</p>
+          <p>Source: <a href="http://html5doctor.com/element-index/">html5doctor</a> for Source</p>
+        </div>
       </div>
-      <div id="hora">
-        <p>Represents a generic document or application section. In this context, a section is a thematic grouping of content, typically with a header, possibly with a footer. Examples include chapters in a book, the various tabbed pages in a tabbed dialog box, or the numbered sections of a thesis. A web site's home page could be split into sections for an introduction, news items, contact information.</p>
-        <p>Source: <a href="http://html5doctor.com/element-index/">html5doctor</a> for Section</p>
-      </div>
-      <div id="Archivos">
-        <p>The source element allows authors to specify multiple alternative media resources for media elements. It does not represent anything on its own. The src attribute gives the address of the media resource. The value must be a valid non-empty URL potentially surrounded by spaces. This attribute must be present.</p>
-        <p>Source: <a href="http://html5doctor.com/element-index/">html5doctor</a> for Source</p>
-      </div>
+      
     </div>
     <!--
     <div class="tabPanel-widget">
