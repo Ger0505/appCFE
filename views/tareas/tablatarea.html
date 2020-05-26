@@ -1,9 +1,12 @@
+<!-- 
+* Copyright 2016 Carlos Eduardo Alfaro Orellana
+-->
 <!DOCTYPE html>
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>PUESTO</title>
+	<title>TAREA</title>
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/sweetalert2.css">
 	<link rel="stylesheet" href="css/material.min.css">
@@ -16,13 +19,10 @@
 	<script src="js/sweetalert2.min.js" ></script>
 	<script src="js/jquery.mCustomScrollbar.concat.min.js" ></script>
 	<script src="js/main.js" ></script>
-
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-  </head>
-
 <body>
 	<!-- Notifications area -->
 	<section class="full-width container-notifications">
@@ -34,7 +34,7 @@
 	            <div class="Notification-text">
 	                <p>
 	                    <i class="zmdi zmdi-circle"></i>
-	                    <strong>AGREGAR COLABORADOR</strong> 
+	                    <strong>New User Registration</strong> 
 	                    <br>
 	                    <small>Just Now</small>
 	                </p>
@@ -230,155 +230,194 @@
 	<section class="full-width pageContent">
 		<section class="full-width header-well">
 			<div class="full-width header-well-icon">
-				<i class="zmdi zmdi-account"></i>
+				<i class="zmdi zmdi-store"></i>
 			</div>
 			<div class="full-width header-well-text">
-				<p class="text-condensedLight">
-					PUESTO
-				</p>
+				
 			</div>
 		</section>
-		<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
-			<div class="mdl-tabs__tab-bar">
-				<a href="#tabNewAdmin" class="mdl-tabs__tab is-active">PUESTO</a>
-				<a href="#tabListAdmin" class="mdl-tabs__tab">NUEVO</a>
-			</div>
-			<div class="mdl-tabs__panel is-active" id="tabNewAdmin">
-				<div class="mdl-grid">
-					<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--12-col-desktop">
-						<div class="full-width panel mdl-shadow--2dp">
-							<div class="full-width panel-tittle bg-primary text-center tittles">
-								PUESTO
-							</div>
-							<center>
+		<div class="full-width divider-menu-h"></div>
+		<div class="mdl-grid">
+			<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--12-col-desktop">
+				<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp full-width table-responsive">
+					<thead>
+						<tr>
+							<th class="mdl-data-table__cell--non-numeric">TAREA</th>
+							<th>TITULO</th>
+							<th>DESCRIPCIÓN </th>
+							<th>FECHA INICIO</th>
+							<th>FECHA FIN</th>
+							<th>REPONSABLE</th>
+							<th>COLABORADOR</th>
 							
-									<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
-										<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp full-width table-responsive">
-											<thead>
-												<tr>
-                                                    <th class="mdl-data-table__cell--non-numeric">idpuesto</th>
-                                                    <th>PUESTO</th>
-													<th>DESCRIPCION</th>
-                                                    
-                                                    <th>opciones</th>
-													
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td class="mdl-data-table__cell--non-numeric">Product Name</td>
-                                                    <td>Product Code</td>
-                                                    <td></td>
-													
-													
-													<td>
-														
-														<div class="dropdown dropright">
-                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                                                              
-                                                            </button>
-                                                            <div class="dropdown-menu">
-                                                              <a class="dropdown-item" href="#">Link 1</a>
-                                                              <a class="dropdown-item" href="#">Link 2</a>
-                                                              <a class="dropdown-item" href="#">Link 3</a>
-                                                            </div>
-                                                          </div>
-                                                        </div>
-													
-													</td>
-													
-												</tr>
-												<tr>
-													<td class="mdl-data-table__cell--non-numeric">Product Name</td>
-                                                    <td>Product Code</td>
-                                                    <td></td>
-												
-													
-													<td>
-														
-														<div class="dropdown dropright">
-                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                                                              
-                                                            </button>
-                                                            <div class="dropdown-menu">
-                                                              <a class="dropdown-item" href="#">Link 1</a>
-                                                              <a class="dropdown-item" href="#">Link 2</a>
-                                                              <a class="dropdown-item" href="#">Link 3</a>
-                                                            </div>
-                                                          </div>
-                                                        </div>
-													git ad
-													</td>
-												</tr>
-												<tr>
-													
-													<td class="mdl-data-table__cell--non-numeric">Product Name</td>
-                                                    <td>Product Code</td>
-                                                    <td></td>
-												
-													
-													<td>
-														
-														<div class="dropdown dropright">
-                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                                                              
-                                                            </button>
-                                                            <div class="dropdown-menu">
-                                                              <a class="dropdown-item" href="#">Link 1</a>
-                                                              <a class="dropdown-item" href="#">Link 2</a>
-                                                              <a class="dropdown-item" href="#">Link 3</a>
-                                                            </div>
-                                                          </div>
-                                                        </div>
-													
-													</td>
-												</tr>
-												
-												<br>
-												<br>
-												<br>
-											</tbody>
-											
-										</table>
-									</div>
-								</center>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="mdl-tabs__panel" id="tabListAdmin">
-				<div class="mdl-grid">
-					<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--8-col-desktop mdl-cell--2-offset-desktop">
-						<div class="full-width panel mdl-shadow--2dp">
-							<div class="full-width panel-tittle bg-success text-center tittles">
-								NUEVO PUESTO
-							</div>
-							<div class="full-width panel-content">
-								<div class="mdl-grid">
-									<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
-										<h5 class="text-condensedLight">DATOS PUESTO</h5>
-										
-										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-											<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="NameAdmin">
-											<label class="mdl-textfield__label" for="NameAdmin">PUESTO</label>
-											<span class="mdl-textfield__error">NOMBRE DE PUESTO INVALIDO</span>
-										</div>
-										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-											<input class="mdl-textfield__input" type="text"  id="LastNameAdmin">
-											<label class="mdl-textfield__label" for="LastNameAdmin">DESCRIPCIÓN</label>
-											
-										</div>
-										
-								<p class="text-center">
-									<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addAdmin">
-										<i class="zmdi zmdi-plus"></i>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="mdl-data-table__cell--non-numeric">Product Name</td>
+							<td>Product Code</td>
+							<td>7</td>
+							<td>$77</td>
+							<td>$77</td>
+							<td>$77</td>
+							<td>
+								<div class="dropdown dropright">
+									<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+									  
 									</button>
-									<div class="mdl-tooltip" for="btn-addAdmin">EDITAR PUESTO</div>
-								</p>
+									<div class="dropdown-menu">
+									  <a class="dropdown-item" href="#">Link 1</a>
+									  <a class="dropdown-item" href="#">Link 2</a>
+									  <a class="dropdown-item" href="#">Link 3</a>
+									</div>
+								  </div>
+								</div>
+									
+							
+							</td>
+							</td>
+						</tr>
+						<tr>
+							<td class="mdl-data-table__cell--non-numeric">Product Name</td>
+							<td>Product Code</td>
+							<td>7</td>
+							<td>$77</td>
+							<td>$77</td>
+							<td>$77</td>
+							<td>
+								<div class="dropdown dropright">
+									<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+									  
+									</button>
+									<div class="dropdown-menu">
+									  <a class="dropdown-item" href="#">Link 1</a>
+									  <a class="dropdown-item" href="#">Link 2</a>
+									  <a class="dropdown-item" href="#">Link 3</a>
+									</div>
+								  </div>
+								</div>
+									
+							
+							</td>
+							</td>
+						</tr>
+						<tr>
+							<td class="mdl-data-table__cell--non-numeric">Product Name</td>
+							<td>Product Code</td>
+							<td>7</td>
+							<td>$77</td>
+							<td>$77</td>
+							<td>$77</td>
+							<td>
+								<div class="dropdown dropright">
+									<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+									  
+									</button>
+									<div class="dropdown-menu">
+									  <a class="dropdown-item" href="#">Link 1</a>
+									  <a class="dropdown-item" href="#">Link 2</a>
+									  <a class="dropdown-item" href="#">Link 3</a>
+									</div>
+								  </div>
+								</div>
+									
+							
+							</td>
+							</td>
+						</tr>
+						<tr>
+							<td class="mdl-data-table__cell--non-numeric">Product Name</td>
+							<td>Product Code</td>
+							<td>7</td>
+							<td>$77</td>
+							<td>$77</td>
+							<td>$77</td>
+							<td><div class="dropdown dropright">
+								<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+								  
+								</button>
+								<div class="dropdown-menu">
+								  <a class="dropdown-item" href="#">Link 1</a>
+								  <a class="dropdown-item" href="#">Link 2</a>
+								  <a class="dropdown-item" href="#">Link 3</a>
+								</div>
+							  </div>
 							</div>
-						</div>
-					</div>
-				</div>
+								
+						
+						</td></td>
+						</tr>
+						<tr>
+							<td class="mdl-data-table__cell--non-numeric">Product Name</td>
+							<td>Product Code</td>
+							<td>7</td>
+							<td>$77</td>
+							<td>$77</td>
+							<td>$77</td>
+							<td>
+								<div class="dropdown dropright">
+									<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+									  
+									</button>
+									<div class="dropdown-menu">
+									  <a class="dropdown-item" href="#">Link 1</a>
+									  <a class="dropdown-item" href="#">Link 2</a>
+									  <a class="dropdown-item" href="#">Link 3</a>
+									</div>
+								  </div>
+								</div>
+									
+							
+							</td>
+							</td>
+						</tr>
+						<tr>
+							<td class="mdl-data-table__cell--non-numeric">Product Name</td>
+							<td>Product Code</td>
+							<td>7</td>
+							<td>$77</td>
+							<td>$77</td>
+							<td>$77</td>
+							<td><div class="dropdown dropright">
+								<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+								  
+								</button>
+								<div class="dropdown-menu">
+								  <a class="dropdown-item" href="#">Link 1</a>
+								  <a class="dropdown-item" href="#">Link 2</a>
+								  <a class="dropdown-item" href="#">Link 3</a>
+								</div>
+							  </div>
+							</div>
+								
+						
+						</td></td>
+						</tr>
+						<tr>
+							<td class="mdl-data-table__cell--non-numeric">Product Name</td>
+							<td>Product Code</td>
+							<td>7</td>
+							<td>$77</td>
+							<td>$77</td>
+							<td>$77</td>
+							<td>
+								<div class="dropdown dropright">
+								<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+								  
+								</button>
+								<div class="dropdown-menu">
+								  <a class="dropdown-item" href="#">Link 1</a>
+								  <a class="dropdown-item" href="#">Link 2</a>
+								  <a class="dropdown-item" href="#">Link 3</a>
+								</div>
+							  </div>
+							</div>
+								
+						
+						</td></td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</section>
