@@ -1,93 +1,70 @@
+<!DOCTYPE html>
 <html lang="es-mx">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/tabpanel.css"
-    <title>Agregar tarea</title>
-  </head>
-  <body>
-    535 missing reports
-    <nav class="inlinenav">
-      <div class="divUsuario"></div>
-      <section class="comments">
-        <img src="#" />
-        #
-      </section>
-      <button class="addTag">
-        Add tag
-      </button>
-      <button>
-        <img src="#" />
-        Save
-      </button>
-      <button>
-        Follow
-      </button>
-      <button></button>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/tabpanel.css">
+  <title>Agregar tarea</title>
+</head>
+
+<body>
+  535 missing reports
+  <nav class="inlinenav">
+    <div class="divUsuario"></div>
+    <section class="comments">
+      <img src="#" />
+      #
+    </section>
+    <button class="addTag">
+      Add tag
+    </button>
+    <button>
+      <img src="#" />
+      Save
+    </button>
+    <button>
+      Follow
+    </button>
+    <button></button>
+  </nav>
+
+  <div class="tabPanel-widget">
+    <nav id="tabs">
+      <h2 class="tabs" onclick="mostrarDiv(event, 'detalles')">Detalles</h2>
+      <h2 class="" onclick="mostrarDiv(event, 'hora')">Hora</h2>
+      <h2 class="" onclick="mostrarDiv(event, 'archivos')">Archivos</h2>
     </nav>
-    
-    <div class="tabPanel-widget">
-      <nav id="tabs">
-        <h2>
-          <input id="tab-1" name="tabs" type="radio" tabindex="0" checked="true" aria-hidden="true">
-          Detalles
-        </h2>
-        <h2>
-          <input id="tab-2" name="tabs" type="radio" tabindex="0" aria-hidden="true">
-          Hora
-        </h2>
-        <h2>
-          <input id="tab-3" name="tabs" type="radio" tabindex="0" aria-hidden="true">
-          Archivos
-        </h2>
-      </nav>
-      <div class="contenedor">
-        <div id="detalles">
-          <p>Represents strong importance for its contents. Indicate relative importance by nesting strong elements; each strong
-            element increases the importance of its contents. Changing the importance of a piece of text with the strong element
-            does not change the meaning of the sentence.</p>
-          <p>Source: <a href="http://html5doctor.com/element-index/">html5doctor</a> for Strong</p>
-        </div>
-        <div id="hora">
-          <p>Represents a generic document or application section. In this context, a section is a thematic grouping of content,
-            typically with a header, possibly with a footer. Examples include chapters in a book, the various tabbed pages in a
-            tabbed dialog box, or the numbered sections of a thesis. A web site's home page could be split into sections for an
-            introduction, news items, contact information.</p>
-          <p>Source: <a href="http://html5doctor.com/element-index/">html5doctor</a> for Section</p>
-        </div>
-        <div id="Archivos">
-          <p>The source element allows authors to specify multiple alternative media resources for media elements. It does not
-            represent anything on its own. The src attribute gives the address of the media resource. The value must be a valid
-            non-empty URL potentially surrounded by spaces. This attribute must be present.</p>
-          <p>Source: <a href="http://html5doctor.com/element-index/">html5doctor</a> for Source</p>
-        </div>
-      </div>
-      
-    </div>
-    <!--
-    <div class="tabPanel-widget">
-      <label for="tab-1" tabindex="0"></label>
-        <input id="tab-1" type="radio" name="tabs" checked="true" aria-hidden="true">
-      <h2>Strong</h2>
-      <div>
-        <p>Represents strong importance for its contents. Indicate relative importance by nesting strong elements; each strong element increases the importance of its contents. Changing the importance of a piece of text with the strong element does not change the meaning of the sentence.</p>
+    <div class="contenedor">
+      <div id="detalles">
+        <p>Represents strong importance for its contents. Indicate relative importance by nesting strong elements; each
+          strong
+          element increases the importance of its contents. Changing the importance of a piece of text with the strong
+          element
+          does not change the meaning of the sentence.</p>
         <p>Source: <a href="http://html5doctor.com/element-index/">html5doctor</a> for Strong</p>
       </div>
-      <label for="tab-2" tabindex="0"></label>
-      <input id="tab-2" type="radio" name="tabs" aria-hidden="true">
-      <h2>Section</h2>
-      <div>
-        <p>Represents a generic document or application section. In this context, a section is a thematic grouping of content, typically with a header, possibly with a footer. Examples include chapters in a book, the various tabbed pages in a tabbed dialog box, or the numbered sections of a thesis. A web site's home page could be split into sections for an introduction, news items, contact information.</p>
+      <div id="hora" style="display: none;">
+        <p>Represents a generic document or application section. In this context, a section is a thematic grouping of
+          content,
+          typically with a header, possibly with a footer. Examples include chapters in a book, the various tabbed pages
+          in a
+          tabbed dialog box, or the numbered sections of a thesis. A web site's home page could be split into sections
+          for an
+          introduction, news items, contact information.</p>
         <p>Source: <a href="http://html5doctor.com/element-index/">html5doctor</a> for Section</p>
       </div>
-      <label for="tab-3" tabindex="0"></label>
-      <input id="tab-3" type="radio" name="tabs" aria-hidden="true">
-      <h2>Source</h2>
-      <div>
-        <p>The source element allows authors to specify multiple alternative media resources for media elements. It does not represent anything on its own. The src attribute gives the address of the media resource. The value must be a valid non-empty URL potentially surrounded by spaces. This attribute must be present.</p>
+      <div id="archivos" style="display: none;">
+        <p>The source element allows authors to specify multiple alternative media resources for media elements. It does
+          not
+          represent anything on its own. The src attribute gives the address of the media resource. The value must be a
+          valid
+          non-empty URL potentially surrounded by spaces. This attribute must be present.</p>
         <p>Source: <a href="http://html5doctor.com/element-index/">html5doctor</a> for Source</p>
       </div>
     </div>
-    -->
-  </body>
+  </div>
+  <script src="/js/mostrarDiv.js"></script>
+</body>
+
 </html>

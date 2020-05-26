@@ -1,23 +1,24 @@
 #tabs {
-  display: inline-flex;
-  padding-left: 70%;
+	display: inline-flex;
+	padding-left: 70%;
+}
+
+#tabs .tabs {
+	background-color: white;
+	padding: 0.4em;
+	cursor: pointer;
+	margin-bottom: 0px;
 }
 
 #tabs h2 {
-  background-color: rgba(182, 182, 182, 0.897);
+	background-color: #e0e0e0d5;
+	border-color: #ffffffd8;
+	border-style: solid;
+	border-width: 1px;
+	padding: 0.4em;
+	cursor: pointer;
+	margin-bottom: 0px;
 }
 
-input[name="tabs"] {
-  opacity: 0.5;
-  cursor: pointer;
-  /* display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;*/
-}
-
-#tabs h2 input[name="tabs"]:checked + h2 {
-  background-color: white;
+.contenedor {
 }
