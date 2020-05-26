@@ -3,20 +3,26 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Administrators</title>
-	<link rel="stylesheet" href="/appCFE/public/stylesheets/normalize.css">
-	<link rel="stylesheet" href="/appCFE/public/stylesheets/sweetalert2.css">
-	<link rel="stylesheet" href="/appCFE/public/stylesheets/material.min.css">
-	<link rel="stylesheet" href="/appCFE/public/stylesheets/material-design-iconic-font.min.css">
-	<link rel="stylesheet" href="/appCFE/public/stylesheets/jquery.mCustomScrollbar.css">
-	<link rel="stylesheet" href="/appCFE/public/stylesheets/main.css">
+	<title>PUESTO</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/sweetalert2.css">
+	<link rel="stylesheet" href="css/material.min.css">
+	<link rel="stylesheet" href="css/material-design-iconic-font.min.css">
+	<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
+	<link rel="stylesheet" href="css/main.css">
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
-	<script src="/appCFE/public/javascripts/material.min.js" ></script>
-	<script src="/appCFE/public/javascripts/sweetalert2.min.js" ></script>
-	<script src="/appCFE/public/javascripts/jquery.mCustomScrollbar.concat.min.js" ></script>
-	<script src="/appCFE/public/javascripts/main.js" ></script>
-</head>
+	<script src="js/material.min.js" ></script>
+	<script src="js/sweetalert2.min.js" ></script>
+	<script src="js/jquery.mCustomScrollbar.concat.min.js" ></script>
+	<script src="js/main.js" ></script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  </head>
+
 <body>
 	<!-- Notifications area -->
 	<section class="full-width container-notifications">
@@ -170,7 +176,17 @@
 						</a>
 						
 					</li>
-				
+					<li class="full-width divider-menu-h"></li>
+					<li class="full-width">
+						<a href="products.html" class="full-width">
+							<div class="navLateral-body-cl">
+								<i class="zmdi zmdi-washing-machine"></i>
+							</div>
+							<div class="navLateral-body-cr hide-on-tablet">
+								PRODUCTS
+							</div>
+						</a>
+					</li>
 					
 					<li class="full-width divider-menu-h"></li>
 					<li class="full-width">
@@ -218,87 +234,152 @@
 			</div>
 			<div class="full-width header-well-text">
 				<p class="text-condensedLight">
-					EDITAR COLABORADOR
+					PUESTO
 				</p>
 			</div>
 		</section>
 		<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
 			<div class="mdl-tabs__tab-bar">
-				<a href="#tabNewAdmin" class="mdl-tabs__tab is-active">EDITAR</a>
-				
+				<a href="#tabNewAdmin" class="mdl-tabs__tab is-active">PUESTO</a>
+				<a href="#tabListAdmin" class="mdl-tabs__tab">NUEVO</a>
 			</div>
 			<div class="mdl-tabs__panel is-active" id="tabNewAdmin">
 				<div class="mdl-grid">
 					<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--12-col-desktop">
 						<div class="full-width panel mdl-shadow--2dp">
 							<div class="full-width panel-tittle bg-primary text-center tittles">
-								EDITAR COLABORADOR
+								PUESTO
+							</div>
+							<center>
+							
+									<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
+										<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp full-width table-responsive">
+											<thead>
+												<tr>
+                                                    <th class="mdl-data-table__cell--non-numeric">idpuesto</th>
+                                                    <th>PUESTO</th>
+													<th>DESCRIPCION</th>
+                                                    
+                                                    <th>opciones</th>
+													
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td class="mdl-data-table__cell--non-numeric">Product Name</td>
+                                                    <td>Product Code</td>
+                                                    <td></td>
+													
+													
+													<td>
+														
+														<div class="dropdown dropright">
+                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                                              
+                                                            </button>
+                                                            <div class="dropdown-menu">
+                                                              <a class="dropdown-item" href="#">Link 1</a>
+                                                              <a class="dropdown-item" href="#">Link 2</a>
+                                                              <a class="dropdown-item" href="#">Link 3</a>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+													
+													</td>
+													
+												</tr>
+												<tr>
+													<td class="mdl-data-table__cell--non-numeric">Product Name</td>
+                                                    <td>Product Code</td>
+                                                    <td></td>
+												
+													
+													<td>
+														
+														<div class="dropdown dropright">
+                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                                              
+                                                            </button>
+                                                            <div class="dropdown-menu">
+                                                              <a class="dropdown-item" href="#">Link 1</a>
+                                                              <a class="dropdown-item" href="#">Link 2</a>
+                                                              <a class="dropdown-item" href="#">Link 3</a>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+													
+													</td>
+												</tr>
+												<tr>
+													
+													<td class="mdl-data-table__cell--non-numeric">Product Name</td>
+                                                    <td>Product Code</td>
+                                                    <td></td>
+												
+													
+													<td>
+														
+														<div class="dropdown dropright">
+                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                                              
+                                                            </button>
+                                                            <div class="dropdown-menu">
+                                                              <a class="dropdown-item" href="#">Link 1</a>
+                                                              <a class="dropdown-item" href="#">Link 2</a>
+                                                              <a class="dropdown-item" href="#">Link 3</a>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+													
+													</td>
+												</tr>
+												
+												<br>
+												<br>
+												<br>
+											</tbody>
+											
+										</table>
+									</div>
+								</center>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="mdl-tabs__panel" id="tabListAdmin">
+				<div class="mdl-grid">
+					<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--8-col-desktop mdl-cell--2-offset-desktop">
+						<div class="full-width panel mdl-shadow--2dp">
+							<div class="full-width panel-tittle bg-success text-center tittles">
+								NUEVO PUESTO
 							</div>
 							<div class="full-width panel-content">
-								<form>
-									<div class="mdl-grid">
-										<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
-											<h5 class="text-condensedLight">DATOS COLABORADOR</h5>
-											
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="NameAdmin">
-												<label class="mdl-textfield__label" for="NameAdmin">NOMBRES</label>
-												<span class="mdl-textfield__error">NOMBRE INVALIDO</span>
-											</div>
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="LastNameAdmin">
-												<label class="mdl-textfield__label" for="LastNameAdmin">APELLIDO PATERNO</label>
-												<span class="mdl-textfield__error">APELLIDO PATERNO INVALIDO</span>
-											</div>
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="LastNameAdmin">
-												<label class="mdl-textfield__label" for="LastNameAdmin">APELLIDO MATERNO</label>
-												<span class="mdl-textfield__error">APELLIDO MATERNO INVALIDO</span>
-											</div>
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text"  id="usuario">
-												<label class="mdl-textfield__label" for="usuario">USUARIO</label>
-												<span class="mdl-textfield__error">USUARIO</span>
-											</div>
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="password" id="password">
-												<label class="mdl-textfield__label" for="emailAdmin">CONTRASEÑA</label>
-												<span class="mdl-textfield__error">CONTRASEÑA INVALIDA</span>
-											</div>
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" id="addressAdmin">
-												<label class="mdl-textfield__label" for="addressAdmin">Address</label>
-												<span class="mdl-textfield__error">Invalid address</span>
-											</div>
+								<div class="mdl-grid">
+									<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
+										<h5 class="text-condensedLight">DATOS PUESTO</h5>
+										
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+											<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="NameAdmin">
+											<label class="mdl-textfield__label" for="NameAdmin">PUESTO</label>
+											<span class="mdl-textfield__error">NOMBRE DE PUESTO INVALIDO</span>
 										</div>
-										<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
-											<h5 class="text-condensedLight">Account Details</h5>
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ]*(\.[0-9]+)?" id="UserNameAdmin">
-												<label class="mdl-textfield__label" for="UserNameAdmin">User Name</label>
-												<span class="mdl-textfield__error">Invalid user name</span>
-											</div>
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="password" id="passwordAdmin">
-												<label class="mdl-textfield__label" for="passwordAdmin">Password</label>
-												<span class="mdl-textfield__error">Invalid password</span>
-											</div>
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+											<input class="mdl-textfield__input" type="text"  id="LastNameAdmin">
+											<label class="mdl-textfield__label" for="LastNameAdmin">DESCRIPCIÓN</label>
 											
 										</div>
-									</div>
-									<p class="text-center">
-										<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addAdmin">
-											<i class="zmdi zmdi-plus"></i>
-										</button>
-										<div class="mdl-tooltip" for="btn-addAdmin">EDITAR COLABORADOR</div>
-									</p>
-								</form>
+										
+								<p class="text-center">
+									<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addAdmin">
+										<i class="zmdi zmdi-plus"></i>
+									</button>
+									<div class="mdl-tooltip" for="btn-addAdmin">EDITAR PUESTO</div>
+								</p>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		
 		</div>
 	</section>
 </body>
