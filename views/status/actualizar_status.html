@@ -4,18 +4,19 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>STATUS</title>
-	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="css/sweetalert2.css">
-	<link rel="stylesheet" href="css/material.min.css">
-	<link rel="stylesheet" href="css/material-design-iconic-font.min.css">
-	<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
-	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="/css/normalize.css">
+	<link rel="stylesheet" href="/css/sweetalert2.css">
+	<link rel="stylesheet" href="/css/material.min.css">
+	<link rel="stylesheet" href="/css/material-design-iconic-font.min.css">
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.css">
+	<link rel="stylesheet" href="/css/main.css">
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
-	<script src="js/material.min.js" ></script>
-	<script src="js/sweetalert2.min.js" ></script>
-	<script src="js/jquery.mCustomScrollbar.concat.min.js" ></script>
-	<script src="js/main.js" ></script>
+	<script>window.jQuery || document.write('<script src="/js/jquery-1.11.2.min.js"><\/script>')</script>
+	<script src="/js/material.min.js" ></script>
+	<script src="/js/sweetalert2.min.js" ></script>
+	<script src="/js/jquery.mCustomScrollbar.concat.min.js" ></script>
+	<script src="/js/main.js" ></script>
+	<script src="/js/_status.js" ></script>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -110,7 +111,7 @@
 					<li class="text-condensedLight noLink" ><small>User Name</small></li>
 					<li class="noLink">
 						<figure>
-							<img src="assets/img/avatar-male.png" alt="Avatar" class="img-responsive">
+							<img src="/assets/img/avatar-male.png" alt="Avatar" class="img-responsive">
 						</figure>
 					</li>
 				</ul>
@@ -126,7 +127,7 @@
 			</div>
 			<figure class="full-width" style="height: 77px;">
 				<div class="navLateral-body-cl">
-					<img src="assets/img/avatar-male.png" alt="Avatar" class="img-responsive">
+					<img src="/assets/img/avatar-male.png" alt="Avatar" class="img-responsive">
 				</div>
 				<figcaption class="navLateral-body-cr hide-on-tablet">
 					<span>
@@ -252,12 +253,12 @@
 										<h5 class="text-condensedLight">DATOS STATUS </h5>
 										
 										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-											<input class="mdl-textfield__input" type="text"  id="NameAdmin">
+											<input class="mdl-textfield__input" type="text"  id="nombre">
 											<label class="mdl-textfield__label" for="NameAdmin">STATUS</label>
 										
 										</div>
 										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-											<input class="mdl-textfield__input" type="text"  id="LastNameAdmin">
+											<input class="mdl-textfield__input" type="text"  id="descripcion">
 											<label class="mdl-textfield__label" for="LastNameAdmin">DESCRIPCIÓN</label>
 											
 										</div>
@@ -266,7 +267,7 @@
 									<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addAdmin">
 										<i class="zmdi zmdi-plus"></i>
 									</button>
-									<div class="mdl-tooltip" for="btn-addAdmin">EDITAR STATUS</div>
+									<div class="mdl-tooltip" for="btnActualizar">ACTUALIZAR STATUS</div>
 								</p>
 							
 						</div>
