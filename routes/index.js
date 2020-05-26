@@ -12,19 +12,19 @@ router.get("/tarea", function (req, res, next) {
 });
 
 router.get("/colaborador", function (req, res, next) {
-  res.sendFile(path.join(__dirname, "../views/colaborador.html"));
+  res.sendFile(path.join(__dirname, "../views/colaborador/colaborador.html"));
 });
 
 router.get("/departamento", function (req, res, next) {
-  res.sendFile(path.join(__dirname, "../views/departamento.html"));
+  res.sendFile(path.join(__dirname, "../views/departamento/departamento.html"));
 });
 
 router.get("/puesto", function (req, res, next) {
-  res.sendFile(path.join(__dirname, "../views/puesto.html"));
+  res.sendFile(path.join(__dirname, "../views/puesto/puesto.html"));
 });
 
 router.get("/status", function (req, res, next) {
-  res.sendFile(path.join(__dirname, "../views/status.html"));
+  res.sendFile(path.join(__dirname, "../views/status/status.html"));
 });
 
 module.exports = router;
