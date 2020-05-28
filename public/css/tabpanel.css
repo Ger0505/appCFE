@@ -120,6 +120,18 @@
 	border-radius: 14px;
 	border-style: inset;
 	border-width: 4px;
+	-moz-appearance: textfield-multiline;
+	-webkit-appearance: textarea;
+	min-height: 120px;
+	margin-bottom: 0.5rem;
+	background-color: white;
+}
+
+#comentario:active {
+	cursor: text;
+}
+#comentario:focus {
+	cursor: text;
 }
 
 hr {

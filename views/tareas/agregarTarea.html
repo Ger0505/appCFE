@@ -4,12 +4,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/css/tabpanel.css">
+  <link rel="stylesheet" href="/css/tabpanel.css" />
   <title>Agregar tarea</title>
 </head>
 
 <body>
-  ID_Tarea <input type="text" class="nombre" placeholder="Inserte nombre tarea">
+  ID_Tarea
+  <input type="text" class="nombre" placeholder="Inserte nombre tarea" />
   <br />
   <nav class="inlinenav">
     <div class="divUsuario"></div>
@@ -35,21 +36,32 @@
         <h2>Colaborador</h2>
         <select id="cmbColaborador" class="entrada"></select>
       </div>
-      <div id="archivos" style="display: none;">
-
-      </div>
+      <div id="archivos" style="display: none;"></div>
     </div>
   </div>
   <h2>Comentarios</h2>
   <section class="comments-section" id="comments">
     <div class="cajaComentarios">
-      <textarea name="" id="comentario" cols="193" rows="10"></textarea>
+      <div>
+        <button>B</button>
+        <button>I</button>
+        <button>U</button>
+        <button></button>
+        <button>Icon</button>
+        <button>Icon</button>
+        <button>Icon</button>
+        <button>Icon</button>
+        <button></button>
+        <button>Icon</button>
+        <button>Imagen</button>
+      </div>
+      <section name="" id="comentario" tabindex="1" contenteditable></section>
       <center>
         <button>Agregar</button>
         <button>Borrar</button>
       </center>
     </div>
-    <hr>
+    <hr />
   </section>
   <script src="/js/mostrarDiv.js"></script>
 </body>
