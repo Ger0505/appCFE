@@ -9,50 +9,48 @@
 </head>
 
 <body>
-  535 <input type="text">
+  ID_Tarea <input type="text" class="nombre" placeholder="Inserte nombre tarea">
+  <br />
   <nav class="inlinenav">
     <div class="divUsuario"></div>
-    <section class="comments">
-      <img src="#" />
-      #
+    <section class="comments" onclick='window.location.href+"#comments"'>
+      <img src="https://static.thenounproject.com/png/51907-200.png" />
+      &nbsp;&nbsp;#
     </section>
-    <button class="addTag">
-      Add tag
-    </button>
     <button>
-      <img src="#" />
+      <img src="/assets/icons/save.svg" height="40" />
       Save
     </button>
-    <button>
-      Follow
-    </button>
-    <button></button>
   </nav>
-
   <div class="tabPanel-widget">
     <nav id="tabs">
+      fecha final
       <h2 class="tabs" onclick="mostrarDiv(event, 'detalles')">Detalles</h2>
-      <h2 class="" onclick="mostrarDiv(event, 'hora')">Hora</h2>
       <h2 class="" onclick="mostrarDiv(event, 'archivos')">Archivos</h2>
     </nav>
     <div class="contenedor">
       <div id="detalles">
         <h2>Descripcion</h2>
-        <textarea cols="30" rows="2"></textarea>
+        <textarea cols="30" rows="2" class="entrada"></textarea>
         <h2>Colaborador</h2>
-        <select id="cmbColaborador"></select>
-      </div>
-      <div id="hora" style="display: none;">
-        <h2>Fecha de conclusión</h2>
-        <input type="datetime">
-        <h2>Status</h2>
-        <select id="cmbStatus"></select>
+        <select id="cmbColaborador" class="entrada"></select>
       </div>
       <div id="archivos" style="display: none;">
-        
+
       </div>
     </div>
   </div>
+  <h2>Comentarios</h2>
+  <section class="comments-section" id="comments">
+    <div class="cajaComentarios">
+      <textarea name="" id="comentario" cols="193" rows="10"></textarea>
+      <center>
+        <button>Agregar</button>
+        <button>Borrar</button>
+      </center>
+    </div>
+    <hr>
+  </section>
   <script src="/js/mostrarDiv.js"></script>
 </body>
 

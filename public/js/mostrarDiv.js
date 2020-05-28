@@ -4,7 +4,7 @@ const nav = document.getElementById("tabs").children;
 function mostrarDiv(event, opcion) {
 	for (let index = 0; index < contenedor.length; index++) {
 		if (opcion === contenedor[index].id) {
-			contenedor[index].style.display = "initial";
+			contenedor[index].style.display = "grid";
 		} else {
 			contenedor[index].style.display = "none";
 		}

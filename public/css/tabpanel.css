@@ -1,6 +1,49 @@
 #tabs {
 	display: inline-flex;
-	padding-left: 70%;
+	padding-left: 80%;
+}
+
+.inlinenav {
+	display: inline-flex;
+	margin-top: 0px;
+	min-width: 99vw;
+}
+
+.inlinenav button {
+	display: inline-flex;
+	align-items: center;
+	background-color: rgb(59, 243, 26);
+	font-size: 2ch;
+	margin-left: 2%;
+	margin-right: 10%;
+	border: none;
+}
+
+.inlinenav button:hover {
+	background-color: rgb(116, 240, 95);
+	cursor: pointer;
+}
+
+.divUsuario {
+	margin-left: 50px;
+	width: 63vw;
+}
+
+.comments {
+	display: inline-flex;
+	align-items: center;
+	padding: 4px;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+.comments:hover {
+	background-color: rgba(236, 236, 236, 0.897);
+}
+
+.comments img {
+	width: auto;
+	max-height: 40px;
 }
 
 #tabs .tabs {
@@ -8,6 +51,12 @@
 	padding: 0.4em;
 	cursor: pointer;
 	margin-bottom: 0px;
+	margin-top: 4px;
+}
+
+.inlinenav,
+#tabs {
+	background-color: #e0e0e0d5;
 }
 
 #tabs h2 {
@@ -18,7 +67,63 @@
 	padding: 0.4em;
 	cursor: pointer;
 	margin-bottom: 0px;
+	margin-top: 4px;
+	border-top-left-radius: 14px;
+	border-top-right-radius: 14px;
 }
 
 .contenedor {
+}
+
+.contenedor div {
+	display: grid;
+	grid-auto-flow: column;
+	grid-template: auto auto / minmax(auto, 50vw) auto;
+	column-gap: 0.25cm;
+}
+
+.entrada {
+	min-height: 120px;
+	font-size: 14pt;
+	background-color: rgb(24, 206, 0);
+}
+
+#cmbStatus,
+#cmbColaborador {
+	/* -moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none; */
+	/* box-sizing: border-box; */
+	background-repeat: no-repeat, repeat;
+}
+
+.nombre {
+	border: none;
+	padding: 12px;
+	font-size: 12pt;
+}
+
+.nombre:hover {
+	border: solid skyblue;
+	border-width: 3px;
+	border-radius: 12px;
+	background-color: gainsboro;
+}
+
+.comments-section {
+	background-image: url(http://api.thumbr.it/whitenoise-361x370.png?background=d1d1d1ff&noise=c2c2c2&density=86&opacity=100);
+	border-radius: 14px;
+	padding: 1.2em;
+}
+
+#comentario {
+	border-radius: 14px;
+	border-style: inset;
+	border-width: 4px;
+}
+
+hr {
+	background-color: midnightblue;
+	height: 0.1cm;
+	border-style: ridge;
 }
