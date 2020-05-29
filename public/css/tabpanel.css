@@ -17,6 +17,7 @@
 	margin-left: 2%;
 	margin-right: 10%;
 	border: none;
+	-webkit-appearance: button;
 }
 
 .inlinenav button:hover {
@@ -70,9 +71,6 @@
 	margin-top: 4px;
 	border-top-left-radius: 14px;
 	border-top-right-radius: 14px;
-}
-
-.contenedor {
 }
 
 .contenedor div {
@@ -138,4 +136,56 @@ hr {
 	background-color: midnightblue;
 	height: 0.1cm;
 	border-style: ridge;
+}
+
+.botonestoolbox {
+	align-items: center;
+}
+
+.botonestoolbox:hover {
+	background-color: #f1f1f1;
+	border-radius: 10px;
+	-webkit-appearance: button;
+	cursor: pointer;
+}
+
+.botonestoolbox:active,
+.botonestoolbox-selected {
+	background-color: #138dff;
+	-webkit-appearance: button;
+	color: white;
+}
+
+.botonestoolbox-selected:hover {
+	background-color: #1479d8;
+	-webkit-appearance: button;
+	color: white;
+}
+
+.botonestoolbox-selected {
+	border-radius: 10px;
+}
+
+.comentario-container {
+	margin-top: 18px;
+	border-radius: 14px;
+	min-width: inherit;
+	background-color: rgb(14, 137, 238);
+	padding: 3px 12px 12px 12px;
+}
+
+.comentario {
+	margin-top: 0.5ex;
+	border-radius: 14px;
+	max-width: inherit;
+	background-color: rgb(182, 236, 250);
+	padding: 12px;
+	-webkit-box-shadow: 0px 0px 8px 5px rgba(179, 179, 179, 1);
+	-moz-box-shadow: 0px 0px 8px 5px rgba(179, 179, 179, 1);
+	box-shadow: 0px 0px 8px 5px rgba(179, 179, 179, 1);
+}
+
+.comentario hr {
+	height: 1pt;
+	background-color: rgb(18, 87, 144);
 }
