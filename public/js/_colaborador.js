@@ -1,11 +1,11 @@
 /**
- * Ver lista de tarea
+ * Ver lista de colaborador
  */
 $(function () {
 	var tablaBody = $("tbody");
 
 	$.ajax({
-		url: "http://localhost:3000/tarea/list",
+		url: "http://localhost:3000/colaborador/list",
 		data: {},
 		type: "GET",
 		contentType: "application/json; charset=UTF-8",
@@ -14,12 +14,13 @@ $(function () {
 			tablaBody.empty();
 
 			for (let i = 0; i < res.response.length; i++) {
+				console.log(res.response[i].Descripcion);
 				tablaBody.append(`<tr>
-                    <td class="mdl-data-table__cell--non-numeric">${res.response[i].IdTarea}</td>
-                    <td>${res.response[i].Titulo}</td>
-                    <td>${res.response[i].Status}</td>
-                    <td>${res.response[i].Colaborador}</td>
-                    <td>${res.response[i].Responsable}</td>
+                    <td class="mdl-data-table__cell--non-numeric">${res.response[i].Nombre}</td>
+                    <td>${res.response[i].Apellido1}</td>
+                    <td>${res.response[i].Apellido2}</td>
+                    <td>${res.response[i].Puesto}</td>
+                    <td>${res.response[i].Departamento}</td>
                     
                     <td>
                         
@@ -28,7 +29,8 @@ $(function () {
                                 
                             </button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="/tarea/actualizar/id=${res.response[i].IdTarea}">Editar</a>
+                                <a class="dropdown-item" href="/colaborador/actualizar/id=${res.response[i].IdColaborador}">Editar</a>
+                                <a class="dropdown-item" href="#" onclick="eliminarColaborador(${res.response[i].IdColaborador});">Eliminar</a>
                             </div>
                             </div>
                         </div>
@@ -46,10 +48,10 @@ $(function () {
 });
 
 /**
- * Agregar un nuevo tarea
+ * Agregar un nuevo colaborador
  */
 $(function () {
-	$("#btnTarea").click(function () {
+	$("#btnColaborador").click(function () {
 		var nombre = $("#nombre").val();
 		var apellido1 = $("#apellido1").val();
 		var apellido2 = $("#apellido2").val();
@@ -64,7 +66,7 @@ $(function () {
 		}
 
 		$.ajax({
-			url: "http://localhost:3000/tarea/insert",
+			url: "http://localhost:3000/colaborador/insert",
 			data: {
 				nombre:nombre,
 				apellido1:apellido1,
@@ -76,7 +78,7 @@ $(function () {
 			},
 			type: "POST",
 			success: function (res) {
-				$(location).attr('href',"/tarea");
+				$(location).attr('href',"/colaborador");
 			},
 			error: function (error) {
 				console.log("error: " + error);
@@ -86,15 +88,15 @@ $(function () {
 });
 
 /**
- * Eliminar tarea
+ * Eliminar colaborador
  */
-function eliminarTarea(valor) {
+function eliminarColaborador(valor) {
 	$.ajax({
-		url: "http://localhost:3000/tarea/delete/" + valor,
+		url: "http://localhost:3000/colaborador/delete/" + valor,
 		data: {},
 		type: "PUT",
 		success: function (res) {
-			$(location).attr('href',"/tarea");
+			$(location).attr('href',"/colaborador");
 		},
 		error: function (err) {
 			console.log(err);

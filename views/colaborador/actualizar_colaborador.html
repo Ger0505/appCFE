@@ -16,6 +16,8 @@
 	<script src="/js/sweetalert2.min.js" ></script>
 	<script src="/js/jquery.mCustomScrollbar.concat.min.js" ></script>
 	<script src="/js/main.js" ></script>
+	<script src="/js/_onload.js" ></script>
+	<script src="/js/_colUpdate.js" ></script>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -253,70 +255,58 @@
 										<h5 class="text-condensedLight">DATOS COLABORADOR</h5>
 										
 										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-											<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="NameAdmin">
+											<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="nombre">
 											<label class="mdl-textfield__label" for="NameAdmin">NOMBRES</label>
 											<span class="mdl-textfield__error">NOMBRE INVALIDO</span>
 										</div>
 										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-											<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="LastNameAdmin">
+											<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="apellido1">
 											<label class="mdl-textfield__label" for="LastNameAdmin">APELLIDO PATERNO</label>
 											<span class="mdl-textfield__error">APELLIDO PATERNO INVALIDO</span>
 										</div>
 										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-											<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="LastNameAdmin">
+											<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="apellido2">
 											<label class="mdl-textfield__label" for="LastNameAdmin">APELLIDO MATERNO</label>
 											<span class="mdl-textfield__error">APELLIDO MATERNO INVALIDO</span>
 										</div>
-										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-											<input class="mdl-textfield__input" type="text"  id="usuario">
-											<label class="mdl-textfield__label" for="usuario">USUARIO</label>
-											<span class="mdl-textfield__error">USUARIO</span>
-										</div>
-										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-											<input class="mdl-textfield__input" type="password" id="password">
-											<label class="mdl-textfield__label" for="emailAdmin">CONTRASEÑA</label>
-											<span class="mdl-textfield__error">CONTRASEÑA INVALIDA</span>
-										</div>
 										<div class="mdl-textfield mdl-js-textfield">
-											<select class="mdl-textfield__input">
+											<select class="mdl-textfield__input" id="puesto">
 												<option value="" disabled="" selected="">PUESTO</option>
 												<option value="">Category 1</option>
 												<option value="">Category 2</option>
 											</select>
 										</div>
 										<div class="mdl-textfield mdl-js-textfield">
-											<select class="mdl-textfield__input">
+											<select class="mdl-textfield__input" id="departamento">
 												<option value="" disabled="" selected="">DEPARTAMENTO</option>
 												<option value="">Category 1</option>
 												<option value="">Category 2</option>
 											</select>
 										</div>
 										
-										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-											<input class="mdl-textfield__input" type="text" id="TEXT">
-											<label class="mdl-textfield__label" for="NameAdmin">STATUS</label>
-											
-										</div>
-
-										
 									</div>
 									<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
 										
 										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-											<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ]*(\.[0-9]+)?" id="UserNameAdmin">
-											<label class="mdl-textfield__label" for="UserNameAdmin">User Name</label>
+											<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ]*(\.[0-9]+)?" id="usuario">
+											<label class="mdl-textfield__label" for="usuario">User Name</label>
 											<span class="mdl-textfield__error">Invalid user name</span>
 										</div>
 										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-											<input class="mdl-textfield__input" type="password" id="passwordAdmin">
-											<label class="mdl-textfield__label" for="passwordAdmin">Password</label>
+											<input class="mdl-textfield__input" type="password" id="password">
+											<label class="mdl-textfield__label" for="password">Password</label>
+											<span class="mdl-textfield__error">Invalid password</span>
+										</div>
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+											<input class="mdl-textfield__input" type="password" id="rpassword">
+											<label class="mdl-textfield__label" for="rpassword">Verificar Password</label>
 											<span class="mdl-textfield__error">Invalid password</span>
 										</div>
 										
 									</div>
 								</div>
 								<p class="text-center">
-									<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addAdmin">
+									<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btnActualizar">
 										<i class="zmdi zmdi-plus"></i>
 									</button>
 									<div class="mdl-tooltip" for="btn-addAdmin">EDITAR COLABORADOR</div>

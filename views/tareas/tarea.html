@@ -8,18 +8,19 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>TAREA</title>
-	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="css/sweetalert2.css">
-	<link rel="stylesheet" href="css/material.min.css">
-	<link rel="stylesheet" href="css/material-design-iconic-font.min.css">
-	<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
-	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="/css/normalize.css">
+	<link rel="stylesheet" href="/css/sweetalert2.css">
+	<link rel="stylesheet" href="/css/material.min.css">
+	<link rel="stylesheet" href="/css/material-design-iconic-font.min.css">
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.css">
+	<link rel="stylesheet" href="/css/main.css">
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
-	<script src="js/material.min.js"></script>
-	<script src="js/sweetalert2.min.js"></script>
-	<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-	<script src="js/main.js"></script>
+	<script>window.jQuery || document.write('<script src="/js/jquery-1.11.2.min.js"><\/script>')</script>
+	<script src="/js/material.min.js"></script>
+	<script src="/js/sweetalert2.min.js"></script>
+	<script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="/js/main.js"></script>
+	<script src="/js/_tarea.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -113,7 +114,7 @@
 					<li class="text-condensedLight noLink"><small>User Name</small></li>
 					<li class="noLink">
 						<figure>
-							<img src="assets/img/avatar-male.png" alt="Avatar" class="img-responsive">
+							<img src="/assets/img/avatar-male.png" alt="Avatar" class="img-responsive">
 						</figure>
 					</li>
 				</ul>
@@ -129,7 +130,7 @@
 			</div>
 			<figure class="full-width" style="height: 77px;">
 				<div class="navLateral-body-cl">
-					<img src="assets/img/avatar-male.png" alt="Avatar" class="img-responsive">
+					<img src="/assets/img/avatar-male.png" alt="Avatar" class="img-responsive">
 				</div>
 				<figcaption class="navLateral-body-cr hide-on-tablet">
 					<span>
@@ -242,192 +243,43 @@
 		<div class="full-width divider-menu-h"></div>
 		<div class="mdl-grid">
 			<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--12-col-desktop">
-				<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp full-width table-responsive">
+				<!-- <button onclick="location.href='localhost:3001/tarea/insert;'" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btnNewTarea">
+					<i class="zmdi zmdi-plus"></i>
+				</button> -->
+				<button class="btn btn-primary" onclick="location.href ='http://localhost:3001/tarea/insert';"><i class="zmdi zmdi-plus"></i>New</button>
+				
+				<table class=" mt-2 mdl-data-table mdl-js-data-table mdl-shadow--2dp full-width table-responsive">
 					<thead>
 						<tr>
-							<th class="mdl-data-table__cell--non-numeric">TAREA</th>
+							<th class="mdl-data-table__cell--non-numeric">ID</th>
 							<th>TITULO</th>
-							<th>DESCRIPCIÓN </th>
-							<th>FECHA INICIO</th>
-							<th>FECHA FIN</th>
-							<th>REPONSABLE</th>
+							<th>STATUS</th>
 							<th>COLABORADOR</th>
-
+							<th>RESPONSABLE</th>
+							<th></th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<td class="mdl-data-table__cell--non-numeric">Product Name</td>
-							<td>Product Code</td>
-							<td>7</td>
-							<td>$77</td>
-							<td>$77</td>
-							<td>$77</td>
+							<td class="mdl-data-table__cell--non-numeric"></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
 							<td>
 								<div class="dropdown dropright">
-									<button type="button" class="btn btn-primary dropdown-toggle"
-										data-toggle="dropdown">
-
+									<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+				
 									</button>
 									<div class="dropdown-menu">
-										<a class="dropdown-item" href="#">Link 1</a>
-										<a class="dropdown-item" href="#">Link 2</a>
-										<a class="dropdown-item" href="#">Link 3</a>
+										<a class="dropdown-item" href="#">Editar</a>
 									</div>
 								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
-
-
-			</td>
-			</td>
-			</tr>
-			<tr>
-				<td class="mdl-data-table__cell--non-numeric">Product Name</td>
-				<td>Product Code</td>
-				<td>7</td>
-				<td>$77</td>
-				<td>$77</td>
-				<td>$77</td>
-				<td>
-					<div class="dropdown dropright">
-						<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-
-						</button>
-						<div class="dropdown-menu">
-							<a class="dropdown-item" href="#">Link 1</a>
-							<a class="dropdown-item" href="#">Link 2</a>
-							<a class="dropdown-item" href="#">Link 3</a>
-						</div>
-					</div>
-		</div>
-
-
-		</td>
-		</td>
-		</tr>
-		<tr>
-			<td class="mdl-data-table__cell--non-numeric">Product Name</td>
-			<td>Product Code</td>
-			<td>7</td>
-			<td>$77</td>
-			<td>$77</td>
-			<td>$77</td>
-			<td>
-				<div class="dropdown dropright">
-					<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-
-					</button>
-					<div class="dropdown-menu">
-						<a class="dropdown-item" href="#">Link 1</a>
-						<a class="dropdown-item" href="#">Link 2</a>
-						<a class="dropdown-item" href="#">Link 3</a>
-					</div>
-				</div>
-				</div>
-
-
-			</td>
-			</td>
-		</tr>
-		<tr>
-			<td class="mdl-data-table__cell--non-numeric">Product Name</td>
-			<td>Product Code</td>
-			<td>7</td>
-			<td>$77</td>
-			<td>$77</td>
-			<td>$77</td>
-			<td>
-				<div class="dropdown dropright">
-					<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-
-					</button>
-					<div class="dropdown-menu">
-						<a class="dropdown-item" href="#">Link 1</a>
-						<a class="dropdown-item" href="#">Link 2</a>
-						<a class="dropdown-item" href="#">Link 3</a>
-					</div>
-				</div>
-				</div>
-
-
-			</td>
-			</td>
-		</tr>
-		<tr>
-			<td class="mdl-data-table__cell--non-numeric">Product Name</td>
-			<td>Product Code</td>
-			<td>7</td>
-			<td>$77</td>
-			<td>$77</td>
-			<td>$77</td>
-			<td>
-				<div class="dropdown dropright">
-					<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-
-					</button>
-					<div class="dropdown-menu">
-						<a class="dropdown-item" href="#">Link 1</a>
-						<a class="dropdown-item" href="#">Link 2</a>
-						<a class="dropdown-item" href="#">Link 3</a>
-					</div>
-				</div>
-				</div>
-
-
-			</td>
-			</td>
-		</tr>
-		<tr>
-			<td class="mdl-data-table__cell--non-numeric">Product Name</td>
-			<td>Product Code</td>
-			<td>7</td>
-			<td>$77</td>
-			<td>$77</td>
-			<td>$77</td>
-			<td>
-				<div class="dropdown dropright">
-					<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-
-					</button>
-					<div class="dropdown-menu">
-						<a class="dropdown-item" href="#">Link 1</a>
-						<a class="dropdown-item" href="#">Link 2</a>
-						<a class="dropdown-item" href="#">Link 3</a>
-					</div>
-				</div>
-				</div>
-
-
-			</td>
-			</td>
-		</tr>
-		<tr>
-			<td class="mdl-data-table__cell--non-numeric">Product Name</td>
-			<td>Product Code</td>
-			<td>7</td>
-			<td>$77</td>
-			<td>$77</td>
-			<td>$77</td>
-			<td>
-				<div class="dropdown dropright">
-					<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-
-					</button>
-					<div class="dropdown-menu">
-						<a class="dropdown-item" href="#">Link 1</a>
-						<a class="dropdown-item" href="#">Link 2</a>
-						<a class="dropdown-item" href="#">Link 3</a>
-					</div>
-				</div>
-				</div>
-
-
-			</td>
-			</td>
-		</tr>
-		</tbody>
-		</table>
-		</div>
 		</div>
 	</section>
 </body>

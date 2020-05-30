@@ -1,11 +1,11 @@
 /**
- * Ver lista de status
+ * Ver lista de puesto
  */
 $(function () {
 	var tablaBody = $("tbody");
 
 	$.ajax({
-		url: "http://localhost:3000/status/list",
+		url: "http://localhost:3000/puesto/list",
 		data: {},
 		type: "GET",
 		contentType: "application/json; charset=UTF-8",
@@ -14,10 +14,9 @@ $(function () {
 			tablaBody.empty();
 
 			for (let i = 0; i < res.response.length; i++) {
-				console.log(res.response[i].Nombre);
+				console.log(res.response[i].Descripcion);
 				tablaBody.append(`<tr>
-                    <td class="mdl-data-table__cell--non-numeric">${res.response[i].IdStatus}</td>
-                    <td>${res.response[i].Nombre}</td>
+                    <td class="mdl-data-table__cell--non-numeric">${res.response[i].IdPuesto}</td>
                     <td>${res.response[i].Descripcion}</td>
                     
                     <td>
@@ -27,8 +26,8 @@ $(function () {
                                 
                             </button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="/status/actualizar/id=${res.response[i].IdStatus}">Editar</a>
-                                <a class="dropdown-item" href="#" onclick="eliminarStatus(${res.response[i].IdStatus});">Eliminar</a>
+                                <a class="dropdown-item" href="/puesto/actualizar/id=${res.response[i].IdPuesto}">Editar</a>
+                                <a class="dropdown-item" href="#" onclick="eliminarPuesto(${res.response[i].IdPuesto});">Eliminar</a>
                             </div>
                             </div>
                         </div>
@@ -46,22 +45,19 @@ $(function () {
 });
 
 /**
- * Agregar un nuevo status
+ * Agregar un nuevo puesto
  */
 $(function () {
-	$("#btnStatus").click(function () {
-		var nombre = $("#nombre").val();
+	$("#btnPuesto").click(function () {
 		var descripcion = $("#descripcion").val();
-
 		$.ajax({
-			url: "http://localhost:3000/status/insert",
+			url: "http://localhost:3000/puesto/insert",
 			data: {
-				nombre: nombre,
-				descripcion: descripcion,
+				descripcion: descripcion
 			},
 			type: "POST",
 			success: function (res) {
-				$(location).attr('href',"/status");
+				$(location).attr('href',"/puesto");
 			},
 			error: function (error) {
 				console.log("error: " + error);
@@ -73,16 +69,16 @@ $(function () {
 /**
  * Eliminar estudiante
  */
-function eliminarStatus(valor) {
+function eliminarPuesto(valor) {
 	$.ajax({
-		url: "http://localhost:3000/status/delete/" + valor,
+		url: "http://localhost:3000/puesto/delete/" + valor,
 		data: {},
 		type: "PUT",
 		success: function (res) {
-			//$(location).attr('href',"/status");
+			$(location).attr('href',"/puesto");
 		},
-		error: function (error) {
-			console.log(error);
+		error: function (err) {
+			console.log(err);
 		},
 	});
 }
