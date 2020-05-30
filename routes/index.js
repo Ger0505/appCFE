@@ -15,6 +15,10 @@ router.get("/tarea/insert", function (req, res, next) {
 	res.sendFile(path.join(__dirname, "../views/tareas/agregarTarea.html"));
 });
 
+router.get("/tarea/prueba", function (req, res, next) {
+	res.sendFile(path.join(__dirname, "../views/tareas/pruebaTarea.html"));
+});
+
 router.get("/colaborador", function (req, res, next) {
 	res.sendFile(path.join(__dirname, "../views/colaborador/colaborador.html"));
 });
