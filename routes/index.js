@@ -4,7 +4,30 @@ const path = require("path");
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-	res.render("index", { title: "Express" });
+	res.sendFile(path.join(__dirname, "../views/index.html"));
+});
+
+router.post("/validacion", function (req, res, next) {
+	let isLogin = parseInt(req.body.login);
+	if (isLogin) {
+		req.session.name = req.body.Nombre;
+		req.session.idCol = parseInt(req.body.IdColaborador);
+		req.session.apellidopat = req.body.Apellido1;
+		req.session.apellidomat = req.body.Apellido2;
+		req.session.deparment = req.body.Departamento;
+		req.session.puesto = req.body.Puesto;
+		res.json({
+			name: req.session.name,
+			id: req.session.idCol,
+			apellidopat: req.session.apellidopat,
+			apellidomat: req.session.apellidomat,
+			deparment: req.session.deparment,
+			puesto: req.session.puesto
+		});
+	} else {
+		res.redirect("/");
+	}
+	//res.sendFile(path.join(__dirname, "../views/tareas/tarea.html"));
 });
 
 router.get("/tarea", function (req, res, next) {

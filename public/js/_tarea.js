@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /**
  * Ver lista de tarea
  */
@@ -147,7 +146,6 @@ $(function () {
 		},
 	});
 });
-=======
 function redireccionar(id) {
 	let urlDeconstruct = window.location.href.split("#");
 	if (urlDeconstruct[1] === id) {
@@ -155,4 +153,3 @@ function redireccionar(id) {
 	}
 	window.location = `${window.location.href}#${id}`;
 }
->>>>>>> ajax loggin (falta detalles)

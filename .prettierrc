@@ -1,4 +1,6 @@
 {
 	"useTabs": true,
-	"endOfLine": "lf"
+	"endOfLine": "lf",
+	"trailingComma": "none",
+	"quoteProps": "preserve"
 }

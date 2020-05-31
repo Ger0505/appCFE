@@ -1,34 +1,37 @@
 const ingresar = () => {
 	$.ajax({
-		url: "urldatos",
+		url: "http://localhost:3000/colaborador/loggin",
 		data: {
-			usuario: "",
-			password: "",
+			usuario: "Kribrick",
+			password: "123"
 		},
-		type: "GET",
-		contentType: "application/json; charset=UTF-8",
-		dataType: "json",
+		type: "POST",
 		success: function (res) {
-			if (res.response[0].loggin === "true") {
-				$.get({
-					url: "http://localhost:3001/...",
-					data: res.response,
-					type: "GET",
-					contentType: "application/json; charset=UTF-8",
-					dataType: "json",
-					success: function (res) {},
-					error: function (error) {
-						console.log("error: " + error);
-					},
-				});
-			}
+			$.ajax({
+				url: "http://localhost:3001/validacion",
+				data: res.response[res.response.length - 1],
+				type: "POST",
+				success: function (res) {
+					console.log(res);
+					// sessionStorage.setItem("name", res);
+					// sessionStorage.setItem("id", req.session.id);
+					// sessionStorage.setItem("apellidopat", req.session.apellidopat);
+					// sessionStorage.setItem("apellidomat", req.session.apellidomat);
+					// sessionStorage.setItem("deparment", req.session.deparment);
+					// sessionStorage.setItem("puesto", req.session.puesto);
+					// window.location = "http://localhost:3001/tarea";
+				},
+				error: function (error) {
+					console.log("error: " + error);
+				}
+			});
 		},
 		error: function (error) {
 			console.log("error: " + error);
-		},
+		}
 	});
 };
 
 $(() => {
-	$("buttonlogin").click();
+	$("#SingIn").click(ingresar);
 });
