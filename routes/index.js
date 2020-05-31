@@ -37,7 +37,7 @@ router.get("/tarea", function (req, res, next) {
 });
 
 router.get("/tarea/insert", function (req, res, next) {
-	res.sendFile(path.join(__dirname, "../views/tareas/agregarTarea.html"));
+	res.sendFile(path.join(__dirname, "../views/tareas/agregar_tarea.html"));
 });
 
 router.get("/tarea/prueba", function (req, res, next) {

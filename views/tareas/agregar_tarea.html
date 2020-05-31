@@ -21,6 +21,7 @@
 	<script src="/js/sweetalert2.min.js"></script>
 	<script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
 	<script src="/js/main.js"></script>
+	<script src="/js/_tareaCreate.js"></script>
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Compiled and minified JavaScript -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>    --> -->
@@ -240,7 +241,7 @@
 		<div class="mdl-grid">
 			<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--12-col-desktop">
                 <span style="font-size: 24px;" id="idTarea">123</span>&nbsp;<span style="font-size: 24px;">Item</span>
-                <button class="btn btn-primary" style="float:right;">Guardar</button>
+                <button class="btn btn-primary" style="float:right;" id="btnTarea">Guardar</button>
                 <input type="text" id="titulo" class="form-control mt-2" placeholder="Titulo de tarea" required>
             </div>
             <div class="full-width mdl-grid">
@@ -252,8 +253,8 @@
                         </select>
                     </div>
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="date" id="fechaFin">
                         <label for="LastNameAdmin">FECHA DE ENTREGA</label>
+                        <input class="mdl-textfield__input" type="date" id="fechaFin">
                         <span class="mdl-textfield__error">FECHA DE ENTREGA INVALIDO</span>
                     </div>
 
@@ -287,50 +288,50 @@
                 <!--Detalles-->
                 <div class="tab-pane container active" id="menu1">
                     <h3>Descripci&oacute;n</h3>
-                    <textarea cols="30" rows="2" class="entrada full-width"></textarea>
+                    <textarea cols="30" rows="2" class="entrada full-width" id="descripcion"></textarea>
                     <h3>Comentarios</h3>
-                    <section class="comments-section" id="comments">
-                    <div class="cajaComentarios">
-                        <div>
-                        <button class="botonestoolbox " onclick="activar(event)">B</button>
-                        <button class="botonestoolbox " onclick="activar(event)">I</button>
-                        <button class="botonestoolbox " onclick="activar(event)">U</button>
-                        <button class="botonestoolbox " onclick="activar(event)"></button>
-                        <button class="botonestoolbox " onclick="activar(event)">Icon</button>
-                        <button class="botonestoolbox " onclick="activar(event)">Icon</button>
-                        <button class="botonestoolbox " onclick="activar(event)">Icon</button>
-                        <button class="botonestoolbox " onclick="activar(event)">Icon</button>
-                        <button class="botonestoolbox " onclick="activar(event)"></button>
-                        <button class="botonestoolbox " onclick="activar(event)">Icon</button>
-                        <button class="botonestoolbox ">Imagen</button>
-                        </div>
-                        <section name="" id="comentario" tabindex="1" contenteditable></section>
-                        <center>
-                        <button>Agregar</button>
-                        <button>Borrar</button>
-                        </center>
-                    </div>
-                    <hr />
-                    <section class="comentario-container">
-                        <center id="usuario">
-                        Usuario
-                        </center>
-                        <section class="comentario">
-                        Hola mundo, esto es un comentario dummie (pruebas)
-                        <hr />
-                        fecha
-                        </section>
-                    </section>
-                    <section class="comentario-container">
-                        <center id="usuario">
-                        Usuario
-                        </center>
-                        <section class="comentario">
-                        Hola mundo, esto es un comentario dummie (pruebas)
-                        <hr />
-                        fecha
-                        </section>
-                    </section>
+                    <section id="comments-section">
+						<div class="cajaComentarios">
+							<div>
+							<button class="botonestoolbox " onclick="activar(event)">B</button>
+							<button class="botonestoolbox " onclick="activar(event)">I</button>
+							<button class="botonestoolbox " onclick="activar(event)">U</button>
+							<button class="botonestoolbox " onclick="activar(event)"></button>
+							<button class="botonestoolbox " onclick="activar(event)">Icon</button>
+							<button class="botonestoolbox " onclick="activar(event)">Icon</button>
+							<button class="botonestoolbox " onclick="activar(event)">Icon</button>
+							<button class="botonestoolbox " onclick="activar(event)">Icon</button>
+							<button class="botonestoolbox " onclick="activar(event)"></button>
+							<button class="botonestoolbox " onclick="activar(event)">Icon</button>
+							<button class="botonestoolbox ">Imagen</button>
+							</div>
+							<section name="" id="comentario" tabindex="1" contenteditable></section>
+							<center>
+							<button class="btn btn-secondary" id="btnAgregar">Agregar</button>
+							<button class="btn btn-secondary" id="btnBorrar">Borrar</button>
+							</center>
+						</div>
+						<hr />
+						<!--<section class="comentario-container">
+							<center id="usuario">
+							Usuario
+							</center>
+							<section class="comentario">
+							Hola mundo, esto es un comentario dummie (pruebas)
+							<hr />
+							fecha
+							</section>
+						</section>
+						<section class="comentario-container">
+							<center id="usuario">
+							Usuario
+							</center>
+							<section class="comentario">
+							Hola mundo, esto es un comentario dummie (pruebas)
+							<hr />
+							fecha
+							</section>
+						</section>-->
                     </section>
                 </div>
                 <!--Archivos-->
