@@ -22,7 +22,16 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	
+	
+
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	<script>
+																  	  
+		$('#myModal').on('shown.bs.modal', function () {
+			$('#myInput').trigger('focus')
+		  })
+	  </script>
 </head>
 <body>
 	<!-- Notifications area -->
@@ -207,7 +216,7 @@
 			<nav class="full-width">
 				<ul class="full-width list-unstyle menu-principal">
 					<li class="full-width">
-						<a href="home.html" class="full-width">
+						<a href="colaborador" class="full-width">
 							<div class="navLateral-body-cl">
 								<i class="zmdi zmdi-view-dashboard"></i>
 							</div>
@@ -216,43 +225,29 @@
 							</div>
 						</a>
 					</li>
-					<li class="full-width divider-menu-h"></li>
+					<li class="full-width list-unstyle menu-principal"></li>
 					<li class="full-width">
-						<a href="#!" class="full-width btn-subMenu">
+						<a href="tarea" class="full-width">
 							<div class="navLateral-body-cl">
-								<i class="zmdi zmdi-case"></i>
+								<i class="zmdi zmdi-view-dashboard"></i>
 							</div>
 							<div class="navLateral-body-cr hide-on-tablet">
 								TAREAS
 							</div>
-							<span class="zmdi zmdi-chevron-left"></span>
 						</a>
-
 					</li>
 					<li class="full-width divider-menu-h"></li>
 					<li class="full-width">
-						<a href="#!" class="full-width btn-subMenu">
+						<a href="comentario" class="full-width">
 							<div class="navLateral-body-cl">
-								<i class="zmdi zmdi-face"></i>
+								<i class="zmdi zmdi-view-dashboard"></i>
 							</div>
 							<div class="navLateral-body-cr hide-on-tablet">
 								COMENTARIOS
 							</div>
-							<span class="zmdi zmdi-chevron-left"></span>
-						</a>
-
-					</li>
-					<li class="full-width divider-menu-h"></li>
-					<li class="full-width">
-						<a href="products.html" class="full-width">
-							<div class="navLateral-body-cl">
-								<i class="zmdi zmdi-washing-machine"></i>
-							</div>
-							<div class="navLateral-body-cr hide-on-tablet">
-								PRODUCTS
-							</div>
 						</a>
 					</li>
+					
 
 
 
@@ -348,14 +343,38 @@
 															data-toggle="dropdown">
 
 														</button>
-														<div class="dropdown-menu">
-															<a class="dropdown-item" href="#">Link 1</a>
-															<a class="dropdown-item" href="#">Link 2</a>
-															<a class="dropdown-item" href="#">Link 3</a>
-														</div>
-													</div>
-								</div>
-
+														
+															
+															<div class="dropdown-menu">
+															  <a href="" class="dropdown-item">New Patient</a>
+															  <a href="" class="dropdown-item">Established Patient</a>
+															  <a href="#response"
+															  class="dropdown-item"
+															  data-toggle="modal" data-target="#response">Responsibilities</a>
+															  <a href="" class="dropdown-item">link 4</a>
+															</div>
+														 
+															<div class="modal" tabindex="-1" role="dialog" id="response">
+																<div class="modal-dialog" role="document">
+																  <div class="modal-content">
+																	<div class="modal-header">
+																	  <h5 class="modal-title">Modal title</h5>
+																	  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+																		<span aria-hidden="true">&times;</span>
+																	  </button>
+																	</div>
+																	<div class="modal-body">
+																	  <p>Modal body text goes here.</p>
+																	</div>
+																	<div class="modal-footer">
+																	  <button type="button" class="btn btn-primary">Save changes</button>
+																	  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+																	</div>
+																  </div>
+																</div>
+															  </div>
+															
+														
 								</td>
 
 								</tr>
