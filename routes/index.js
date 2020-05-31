@@ -4,6 +4,7 @@ const path = require("path");
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
+	req.session.destroy();
 	res.sendFile(path.join(__dirname, "../views/index.html"));
 });
 
@@ -16,6 +17,7 @@ router.post("/validacion", function (req, res, next) {
 		req.session.apellidomat = req.body.Apellido2;
 		req.session.deparment = req.body.Departamento;
 		req.session.puesto = req.body.Puesto;
+		console.log(req.session);
 		res.json({
 			name: req.session.name,
 			id: req.session.idCol,
@@ -78,8 +80,8 @@ router.get("/status/actualizar/:id", function (req, res, next) {
 	res.sendFile(path.join(__dirname, "../views/status/actualizar_status.html"));
 });
 
-router.get("/tablatarea",function(req,res,next){
-	res.sendFile(path.join(__dirname,"../views/tareas/tabla_tarea.html"));	
+router.get("/tablatarea", function (req, res, next) {
+	res.sendFile(path.join(__dirname, "../views/tareas/tabla_tarea.html"));
 });
 
 module.exports = router;

@@ -32,6 +32,12 @@ $(document).ready(function () {
 			navOption.addClass("navBar-options-change");
 		}
 	});
+
+	function salir() {
+		sessionStorage.clear();
+		window.location = "http://localhost:3001/";
+	}
+
 	/*Salir del sistema*/
 	$(".btn-exit").on("click", function () {
 		swal(
@@ -47,6 +53,7 @@ $(document).ready(function () {
 				if (isConfirm) {
 					console.log("Huevos");
 					//TODO_LATER
+					salir();
 				}
 			}
 		);

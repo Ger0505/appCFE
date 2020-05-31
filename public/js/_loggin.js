@@ -1,9 +1,11 @@
 const ingresar = () => {
+	const password = $("#pass").val();
+	const user = $("#userName").val();
 	$.ajax({
 		url: "http://localhost:3000/colaborador/loggin",
 		data: {
-			usuario: "Kribrick",
-			password: "123"
+			usuario: user,
+			password: password
 		},
 		type: "POST",
 		success: function (res) {
