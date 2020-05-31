@@ -12,14 +12,13 @@ const ingresar = () => {
 				data: res.response[res.response.length - 1],
 				type: "POST",
 				success: function (res) {
-					console.log(res);
-					// sessionStorage.setItem("name", res);
-					// sessionStorage.setItem("id", req.session.id);
-					// sessionStorage.setItem("apellidopat", req.session.apellidopat);
-					// sessionStorage.setItem("apellidomat", req.session.apellidomat);
-					// sessionStorage.setItem("deparment", req.session.deparment);
-					// sessionStorage.setItem("puesto", req.session.puesto);
-					// window.location = "http://localhost:3001/tarea";
+					sessionStorage.setItem("name", res.name);
+					sessionStorage.setItem("id", res.id);
+					sessionStorage.setItem("apellidopat", res.apellidopat);
+					sessionStorage.setItem("apellidomat", res.apellidomat);
+					sessionStorage.setItem("deparment", res.deparment);
+					sessionStorage.setItem("puesto", res.puesto);
+					window.location = "http://localhost:3001/tarea";
 				},
 				error: function (error) {
 					console.log("error: " + error);
