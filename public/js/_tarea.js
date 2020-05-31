@@ -132,6 +132,12 @@ $(function () {
 		}
 	});
 });
+
+function salir() {
+	sessionStorage.clear();
+	window.location = "http://localhost:3001/";
+}
+
 function redireccionar(id) {
 	let urlDeconstruct = window.location.href.split("#");
 	if (urlDeconstruct[1] === id) {
