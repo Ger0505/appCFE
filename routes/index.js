@@ -78,4 +78,8 @@ router.get("/status/actualizar/:id", function (req, res, next) {
 	res.sendFile(path.join(__dirname, "../views/status/actualizar_status.html"));
 });
 
+router.get("/tablatarea",function(req,res,next){
+	res.sendFile(path.join(__dirname,"../views/tareas/tabla_tarea.html"));	
+});
+
 module.exports = router;
