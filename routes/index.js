@@ -1,5 +1,5 @@
 var express = require("express");
-var fs = require('fs');
+var fs = require("fs");
 var router = express.Router();
 const path = require("path");
 
@@ -9,29 +9,75 @@ router.get("/", function (req, res, next) {
 	res.sendFile(path.join(__dirname, "../views/index.html"));
 });
 
+const promesa = (JSON, req) => {
+	return new Promise((resolve, reject) => {
+		let isLogin = parseInt(JSON.login);
+		if (isLogin) {
+			req.session.name = req.body.Nombre;
+			req.session.idCol = parseInt(req.body.IdColaborador);
+			req.session.apellidopat = req.body.Apellido1;
+			req.session.apellidomat = req.body.Apellido2;
+			req.session.deparment = req.body.Departamento;
+			req.session.puesto = req.body.Puesto;
+			console.log(req.session);
+			resolve({
+				name: req.session.name,
+				id: req.session.idCol,
+				apellidopat: req.session.apellidopat,
+				apellidomat: req.session.apellidomat,
+				deparment: req.session.deparment,
+				puesto: req.session.puesto
+			});
+		} else {
+			reject({
+				msg: "usuario no existente o invalido"
+			});
+		}
+	});
+};
+
 router.post("/validacion", function (req, res, next) {
-	let isLogin = parseInt(req.body.login);
-	if (isLogin) {
-		req.session.name = req.body.Nombre;
-		req.session.idCol = parseInt(req.body.IdColaborador);
-		req.session.apellidopat = req.body.Apellido1;
-		req.session.apellidomat = req.body.Apellido2;
-		req.session.deparment = req.body.Departamento;
-		req.session.puesto = req.body.Puesto;
-		console.log(req.session);
-		res.json({
-			name: req.session.name,
-			id: req.session.idCol,
-			apellidopat: req.session.apellidopat,
-			apellidomat: req.session.apellidomat,
-			deparment: req.session.deparment,
-			puesto: req.session.puesto
+	promesa(req.body, req)
+		.then((value) => {
+			res.json({
+				name: value.name,
+				id: value.idCol,
+				apellidopat: value.apellidopat,
+				apellidomat: value.apellidomat,
+				deparment: value.deparment,
+				puesto: value.puesto
+			});
+		})
+		.catch((err) => {
+			res.status(400);
+			res.json(err);
 		});
-	} else {
-		res.redirect("/");
-	}
 	//res.sendFile(path.join(__dirname, "../views/tareas/tarea.html"));
 });
+
+// router.post("/validacion", function (req, res, next) {
+// 	let isLogin = parseInt(req.body.login);
+// 	if (isLogin) {
+// 		req.session.name = req.body.Nombre;
+// 		req.session.idCol = parseInt(req.body.IdColaborador);
+// 		req.session.apellidopat = req.body.Apellido1;
+// 		req.session.apellidomat = req.body.Apellido2;
+// 		req.session.deparment = req.body.Departamento;
+// 		req.session.puesto = req.body.Puesto;
+// 		console.log(req.session);
+// 		res.json({
+// 			name: req.session.name,
+// 			id: req.session.idCol,
+// 			apellidopat: req.session.apellidopat,
+// 			apellidomat: req.session.apellidomat,
+// 			deparment: req.session.deparment,
+// 			puesto: req.session.puesto
+// 		});
+// 	} else {
+// 		res.redirect("/");
+// 	}
+// 	//res.sendFile(path.join(__dirname, "../views/tareas/tarea.html"));
+// });
 
 router.get("/tarea", function (req, res, next) {
 	res.sendFile(path.join(__dirname, "../views/tareas/tarea.html"));
@@ -85,18 +131,17 @@ router.get("/tablatarea", function (req, res, next) {
 	res.sendFile(path.join(__dirname, "../views/tareas/tabla_tarea.html"));
 });
 
-router.post('/fileupload', function (req, res) {
+router.post("/fileupload", function (req, res) {
 	let file = req.files.file;
 	console.log(file.name);
-  
-	file.mv('./files/'+file.name,function (error) {
-		if(error) 
-			return res.status(500).send({message:error});
-		
-		// return res.status(200).send(  
+
+	file.mv("./files/" + file.name, function (error) {
+		if (error) return res.status(500).send({ message: error });
+
+		// return res.status(200).send(
 		// });
 		location.href = "/tareas";
-  });
+	});
 });
 
 module.exports = router;
