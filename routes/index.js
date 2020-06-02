@@ -19,10 +19,10 @@ const promesa = (JSON, req) => {
 			req.session.apellidomat = req.body.Apellido2;
 			req.session.deparment = req.body.Departamento;
 			req.session.puesto = req.body.Puesto;
-			console.log(req.session);
+			console.log(req.session.idCol);
 			resolve({
 				name: req.session.name,
-				id: req.session.idCol,
+				idCol: req.session.idCol,
 				apellidopat: req.session.apellidopat,
 				apellidomat: req.session.apellidomat,
 				deparment: req.session.deparment,
@@ -39,6 +39,7 @@ const promesa = (JSON, req) => {
 router.post("/validacion", function (req, res, next) {
 	promesa(req.body, req)
 		.then((value) => {
+			console.log(value.idCol);
 			res.json({
 				name: value.name,
 				id: value.idCol,
@@ -54,30 +55,6 @@ router.post("/validacion", function (req, res, next) {
 		});
 	//res.sendFile(path.join(__dirname, "../views/tareas/tarea.html"));
 });
-
-// router.post("/validacion", function (req, res, next) {
-// 	let isLogin = parseInt(req.body.login);
-// 	if (isLogin) {
-// 		req.session.name = req.body.Nombre;
-// 		req.session.idCol = parseInt(req.body.IdColaborador);
-// 		req.session.apellidopat = req.body.Apellido1;
-// 		req.session.apellidomat = req.body.Apellido2;
-// 		req.session.deparment = req.body.Departamento;
-// 		req.session.puesto = req.body.Puesto;
-// 		console.log(req.session);
-// 		res.json({
-// 			name: req.session.name,
-// 			id: req.session.idCol,
-// 			apellidopat: req.session.apellidopat,
-// 			apellidomat: req.session.apellidomat,
-// 			deparment: req.session.deparment,
-// 			puesto: req.session.puesto
-// 		});
-// 	} else {
-// 		res.redirect("/");
-// 	}
-// 	//res.sendFile(path.join(__dirname, "../views/tareas/tarea.html"));
-// });
 
 router.get("/tarea", function (req, res, next) {
 	res.sendFile(path.join(__dirname, "../views/tareas/tarea.html"));
