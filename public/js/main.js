@@ -42,11 +42,11 @@ $(document).ready(function () {
 	$(".btn-exit").on("click", function () {
 		swal(
 			{
-				title: "You want out of the system?",
-				text: "The current session will be closed and will leave the system",
+				title: "¿Quieres salir del sistema?",
+				text: "La sesión actual será cerrada y dejara el sistema",
 				type: "warning",
 				showCancelButton: true,
-				confirmButtonText: "Yes, exit",
+				confirmButtonText: "Si, salir",
 				closeOnConfirm: false
 			},
 			function (isConfirm) {
@@ -81,3 +81,9 @@ $(document).ready(function () {
 		});
 	});
 })(jQuery);
+
+$(function(){
+	$("#lateralUserName").text(sessionStorage.getItem("name")+" "+sessionStorage.getItem("apellidopat"));
+	$("#topUserName").text(sessionStorage.getItem("name")+" "+sessionStorage.getItem("apellidopat"));
+	$("#puestoUser").text(sessionStorage.getItem("puesto"));
+});

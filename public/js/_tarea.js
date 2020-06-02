@@ -16,7 +16,7 @@ $(function () {
 			for (let i = 0; i < res.response.length; i++) {
 				tablaBody.append(`<tr>
                     <td class="mdl-data-table__cell--non-numeric">${res.response[i].IdTarea}</td>
-                    <td><a href="/tarea/details?id=">${res.response[i].IdTarea}</a></td>
+                    <td><a href="/tarea/details/id=${res.response[i].IdTarea}">${res.response[i].Titulo}</a></td>
                     <td>${res.response[i].Status}</td>
                     <td>${res.response[i].Colaborador}</td>
                     <td>${res.response[i].Responsable}</td>
