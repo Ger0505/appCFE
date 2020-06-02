@@ -160,6 +160,11 @@ $(function () {
 	});
 });
 
+$(function(){
+	$("btnArchivo").click(function(e){
+		e.preventDefault();
+	});
+});
 
 /**
  * Poner un 0 si el número es menor a 10
