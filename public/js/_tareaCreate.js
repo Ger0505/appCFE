@@ -50,7 +50,7 @@ $(function () {
 	$("#btnTarea").click(function () {
 		var titulo = $("#titulo").val();
 		var colaborador = $("#colaborador").val();
-		var responsable = 1;
+		var responsable = sessionStorage.getItem("id");
 		var status = $("#status").val();
 		var fechaFin = $("#fechaFin").val();
 		var descripcion = $("#descripcion").val();
@@ -79,7 +79,7 @@ $(function () {
                 });
 
                 for (let i = 0; i < dfechas.length; i++) {
-                    agregarComentario(1,dcomentarios[i],dfechas[i]);
+                    agregarComentario(responsable,dcomentarios[i],dfechas[i]);
                 }
 				$(location).attr('href',"/tarea");
 			},
@@ -117,7 +117,8 @@ var agregarComentario = function (colaborador,comentario,fecha) {
  */
 $(function () {
 	$("#btnAgregar").click(function () {
-        var comments = $(".comentario-container");
+		var comments = $(".comentario-container");
+		var fullName = sessionStorage.getItem("name")+" "+sessionStorage.getItem("apellidopat")+" "+sessionStorage.getItem("apellidomat")
         var text = $("#comentario").text();
         var now = new Date(Date.now());
         var formatted = now.getFullYear() + "-" + toDigital(now.getMonth()) + "-" + toDigital(now.getDay());//+ " "+
@@ -125,7 +126,7 @@ $(function () {
 
         var divComment = $(`
         <section class="comentario-container">
-            <span class="nameColaborador">Usuario</span><br>
+            <span class="nameColaborador">${fullName}</span><br>
             <span class="fecha">${formatted}</span>
             <hr/>
             <div class="comentario">
@@ -150,3 +151,12 @@ $(function () {
 function toDigital(num){
      return num < 10 ? "0"+num:num;
 }
+
+function init(){
+	var btnArchivo = document.getElementById("btnArchivo");
+	btnArchivo.addEventListener("click",function(e){
+		e.preventDefault();
+	},false);
+}
+
+window.addEventListener("load",init,false);

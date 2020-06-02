@@ -149,9 +149,9 @@
 			<nav class="full-width">
 				<ul class="full-width list-unstyle menu-principal">
 					<li class="full-width">
-						<a href="home.html" class="full-width">
+						<a href="colaborador" class="full-width">
 							<div class="navLateral-body-cl">
-								<i class="zmdi zmdi-view-dashboard"></i>
+								<i class="zmdi zmdi-accounts"></i>
 							</div>
 							<div class="navLateral-body-cr hide-on-tablet">
 								COLABORADORES
@@ -160,75 +160,47 @@
 					</li>
 					<li class="full-width divider-menu-h"></li>
 					<li class="full-width">
-						<a href="#!" class="full-width btn-subMenu">
+						<a href="tarea" class="full-width">
 							<div class="navLateral-body-cl">
-								<i class="zmdi zmdi-case"></i>
+								<i class="zmdi zmdi-calendar-check"></i>
 							</div>
 							<div class="navLateral-body-cr hide-on-tablet">
 								TAREAS
 							</div>
-							<span class="zmdi zmdi-chevron-left"></span>
 						</a>
-
 					</li>
 					<li class="full-width divider-menu-h"></li>
 					<li class="full-width">
-						<a href="#!" class="full-width btn-subMenu">
+						<a href="puesto" class="full-width">
 							<div class="navLateral-body-cl">
-								<i class="zmdi zmdi-face"></i>
+								<i class="zmdi zmdi-accounts-list"></i>
 							</div>
 							<div class="navLateral-body-cr hide-on-tablet">
-								COMENTARIOS
+								PUESTOS
 							</div>
-							<span class="zmdi zmdi-chevron-left"></span>
 						</a>
-
 					</li>
 					<li class="full-width divider-menu-h"></li>
 					<li class="full-width">
 						<a href="Departamento" class="full-width">
 							<div class="navLateral-body-cl">
-								<i class="zmdi zmdi-view-dashboard"></i>
+								<i class="zmdi zmdi-storage"></i>
 							</div>
 							<div class="navLateral-body-cr hide-on-tablet">
-								DEPARTAMENTO
+								DEPARTAMENTOS
 							</div>
 						</a>
 					</li>
-
 					<li class="full-width divider-menu-h"></li>
 					<li class="full-width">
-						<a href="#!" class="full-width btn-subMenu">
+						<a href="#" class="full-width">
 							<div class="navLateral-body-cl">
 								<i class="zmdi zmdi-wrench"></i>
 							</div>
 							<div class="navLateral-body-cr hide-on-tablet">
-								SETTINGS
+								CONFIGURACIÓN
 							</div>
-							<span class="zmdi zmdi-chevron-left"></span>
 						</a>
-						<ul class="full-width menu-principal sub-menu-options">
-							<li class="full-width">
-								<a href="#!" class="full-width">
-									<div class="navLateral-body-cl">
-										<i class="zmdi zmdi-widgets"></i>
-									</div>
-									<div class="navLateral-body-cr hide-on-tablet">
-										OPTION
-									</div>
-								</a>
-							</li>
-							<li class="full-width">
-								<a href="#!" class="full-width">
-									<div class="navLateral-body-cl">
-										<i class="zmdi zmdi-widgets"></i>
-									</div>
-									<div class="navLateral-body-cr hide-on-tablet">
-										OPTION
-									</div>
-								</a>
-							</li>
-						</ul>
 					</li>
 				</ul>
 			</nav>
@@ -337,8 +309,11 @@
                 <!--Archivos-->
                 <div class="tab-pane container fade" id="menu2">
                     <div class="mt-2">
-                        <input type="file" class="form-control-file border">
-                        <button class="btn btn-primary mt-4">Cargar</button>
+						<form ref='uploadForm' 
+						id='uploadForm' action="http://localhost:3001/fileupload" method="post"  encType="multipart/form-data">
+							<input type="file" class="form-control-file border" name="file">
+							<input type="submit" value="Cargar" class="btn btn-primary mt-4" id="btnArchivo"/>
+						</form>
                     </div>
                     <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
                         <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp full-width table-responsive">

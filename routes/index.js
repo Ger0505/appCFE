@@ -1,4 +1,5 @@
 var express = require("express");
+var fs = require('fs');
 var router = express.Router();
 const path = require("path");
 
@@ -40,8 +41,8 @@ router.get("/tarea/insert", function (req, res, next) {
 	res.sendFile(path.join(__dirname, "../views/tareas/agregar_tarea.html"));
 });
 
-router.get("/tarea/prueba", function (req, res, next) {
-	res.sendFile(path.join(__dirname, "../views/tareas/pruebaTarea.html"));
+router.get("/tarea/details/:id", function (req, res, next) {
+	res.sendFile(path.join(__dirname, "../views/tareas/ver_tarea.html"));
 });
 
 router.get("/colaborador", function (req, res, next) {
@@ -82,6 +83,20 @@ router.get("/status/actualizar/:id", function (req, res, next) {
 
 router.get("/tablatarea", function (req, res, next) {
 	res.sendFile(path.join(__dirname, "../views/tareas/tabla_tarea.html"));
+});
+
+router.post('/fileupload', function (req, res) {
+	let file = req.files.file;
+	console.log(file.name);
+  
+	file.mv('./files/'+file.name,function (error) {
+		if(error) 
+			return res.status(500).send({message:error});
+		
+		// return res.status(200).send(  
+		// });
+		location.href = "/tareas";
+  });
 });
 
 module.exports = router;

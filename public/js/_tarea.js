@@ -3,9 +3,9 @@
  */
 $(function () {
 	var tablaBody = $("tbody");
-
+    var id = sessionStorage.getItem("id");
 	$.ajax({
-		url: "http://localhost:3000/tarea/list",
+		url: "http://localhost:3000/tarea/list/"+id,
 		data: {},
 		type: "GET",
 		contentType: "application/json; charset=UTF-8",
@@ -16,7 +16,7 @@ $(function () {
 			for (let i = 0; i < res.response.length; i++) {
 				tablaBody.append(`<tr>
                     <td class="mdl-data-table__cell--non-numeric">${res.response[i].IdTarea}</td>
-                    <td>${res.response[i].Titulo}</td>
+                    <td><a href="/tarea/details?id=">${res.response[i].IdTarea}</a></td>
                     <td>${res.response[i].Status}</td>
                     <td>${res.response[i].Colaborador}</td>
                     <td>${res.response[i].Responsable}</td>
