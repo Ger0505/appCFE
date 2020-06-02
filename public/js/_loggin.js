@@ -24,10 +24,6 @@ const ingresar = () => {
 						window.location = "http://localhost:3001/tarea";
 					},
 					error: function (error) {
-						let json = JSON.stringify(error);
-						console.log("error: " + json);
-						console.log("error: " + error.responseJSON.msg);
-						console.log("error: " + error.status);
 						alert(`error: ${error.status}\n${error.responseJSON.msg}`);
 					}
 				});
