@@ -54,10 +54,10 @@ $(function () {
 });
 
 /**
- * Ver información de tarea
+ * Ver comentarios
  */
 var agregarComentarios = function (id) {
-	var divComment = $("#comments-section");
+	var divComentarios = $("#comments-section");
 	$.ajax({
 		url: "http://localhost:3000/comentarios/list/"+id,
 		data: {},
@@ -75,7 +75,7 @@ var agregarComentarios = function (id) {
 						${res.response[i].Comentario}
 					</div>
 				</section>`);
-				divComment.append(divComment);
+				divComentarios.append(divComment);
 			}
 		},
 		error: function (error) {
@@ -83,3 +83,88 @@ var agregarComentarios = function (id) {
 		}
 	});
 };
+
+/**
+ *  Agregar un Comentario
+ */
+$(function () {
+	$("#btnAgregar").click(function () {
+		var comments = $(".comentario-container");
+		var fullName = sessionStorage.getItem("name")+" "+sessionStorage.getItem("apellidopat")+" "+sessionStorage.getItem("apellidomat")
+        var text = $("#comentario").text();
+        var now = new Date(Date.now());
+        var formatted = now.getFullYear() + "-" + toDigital(now.getMonth()) + "-" + toDigital(now.getDay());
+		var idtarea = $("#idTarea").text();
+
+		$.ajax({
+			url: "http://localhost:3000/comentarios/insertComentario",
+			data: {
+				colaborador:sessionStorage.getItem("id"),
+				comentario:text,
+				fecha:formatted,
+				idtarea:idtarea
+			},
+			type: "POST",
+			success: function (res) {
+				var divComment = $(`
+				<section class="comentario-container">
+					<span class="nameColaborador">${fullName}</span><br>
+					<span class="fecha">${formatted}</span>
+					<hr/>
+					<div class="comentario">
+						${text}
+					</div>
+				</section>`);
+
+				if(comments.length != 0){
+					divComment.insertBefore(comments[0]);
+				}else{
+					$("#comments-section").append(divComment);
+				}
+				$("#comentario").text("");
+			},
+			error: function (error) {
+				console.log("error: " + error);
+			},
+		});
+    });
+});
+
+/**
+ * Cambiar Status de la Tarea
+ */
+$(function () {
+	$("#btnTarea").click(function () {
+		var idtarea = $("#idTarea").text();
+		var status = $("#status").val();
+		var statusName = $('select[id="status"] option:selected').text();
+		var actualStatus = $("#actualStatus").val();
+		if(actualStatus === statusName || statusName === 'STATUS' ){
+			$(location).attr('href',"/tarea");
+			return;
+		}
+		$.ajax({
+			url: "http://localhost:3000/tarea/updateStatus",
+			data: {
+				status:status,
+				id:idtarea
+			},
+			type: "PUT",
+			success: function (res) {
+				$(location).attr('href',"/tarea");
+			},
+			error: function (error) {
+				console.log("error: " + error);
+			},
+		});
+	});
+});
+
+
+/**
+ * Poner un 0 si el número es menor a 10
+ * @param {*} num 
+ */
+function toDigital(num){
+	return num < 10 ? "0"+num:num;
+}
