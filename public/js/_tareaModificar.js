@@ -1,3 +1,4 @@
+
 /**
  * Ver select de status
  */
@@ -24,7 +25,6 @@ $(function () {
 		},
 	});
 });
-
 
 /**
  * Ver información de tarea
@@ -99,7 +99,7 @@ var agregarFiles = function (id) {
 		success: function (res) {
 			tbody.empty();
 			for (let i = 0; i < res.response.length; i++) {
-				tbody.append(`<tr>
+				tbody.append(`<tr id='${res.response[i].Ruta}'>
 				<td>${res.response[i].Ruta}</td>
 				<td><button class='btn btn-primary' onclick="descargarArchivo('${res.response[i].Ruta}')"><i class="zmdi zmdi-download"></i></button></td>
 				<td><button class='btn btn-danger' onclick="eliminarArchivo('${res.response[i].Ruta}')"><i class="zmdi zmdi-delete"></i>
@@ -194,21 +194,6 @@ $(function () {
 	});
 });
 
-/**
- *  Ver lista de archivos
- */
-$(function(){
-	$("btnArchivo").click(function(e){
-		e.preventDefault();
-		var file = $('#file')[0].files[0] 
-		if (file){ 
-			console.log(file.name); 
-		}else{
-			alert("Fail");
-		}
-	});
-});
-
 /***
  * Cargar archivo a directorio
  */
@@ -225,7 +210,7 @@ $(function(){
 			contentType: false,
             processData: false,
 			success: function (res) {
-				var fila = $(`<tr>
+				var fila = $(`<tr id='${res.fileName}'>
 				<td>${res.fileName}</td>
 				<td><button class='btn btn-primary' onclick="descargarArchivo('${res.fileName}')"><i class="zmdi zmdi-download"></i></button></td>
 				<td><button class='btn btn-danger' onclick="eliminarArchivo('${res.fileName}')"><i class="zmdi zmdi-delete"></i>
@@ -276,19 +261,42 @@ var descargarArchivo = function(name){
 	});
 } 
 
+/**
+ * Elimina un archivo y de la tabla
+ */
 var eliminarArchivo = function(name){
+	var tbody = $("tbody");
 	$.ajax({
 		url: "http://localhost:3000/tarea/deleteFile",
 		data: {name:name},
 		type: "PUT",
 		success: function (res) {
-			alert("Eliminado");
+			borrarFila(name);
 		},
 		error: function (err) {
 			console.log(err);
 		},
 	});
 } 
+
+function borrarFila(name){
+	document.getElementsByTagName("tbody")[0].removeChild(document.getElementById(name));
+}
+
+/**
+ *  Prevenir el submit
+ */
+$(function(){
+	$("btnArchivo").click(function(e){
+		e.preventDefault();
+		var file = $('#file')[0].files[0] 
+		if (file){ 
+			console.log(file.name); 
+		}else{
+			alert("Fail");
+		}
+	});
+});
 
 /**
  * Poner un 0 si el número es menor a 10

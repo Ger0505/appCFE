@@ -89,6 +89,8 @@ $(function () {
 					for (let i = 0; i < dfechas.length; i++) {
 						agregarComentario(responsable, dcomentarios[i], dfechas[i]);
 					}
+					alert(res.id);
+					cargarArchivo(res.id);
 					$(location).attr("href", "/tarea");
 				},
 				error: function (error) {
@@ -101,6 +103,13 @@ $(function () {
 	});
 });
 
+/**
+ * Validaciones
+ * @param {*} colaborador 
+ * @param {*} fechaFin 
+ * @param {*} titulo 
+ * @param {*} status 
+ */
 const fieldvalidations = (colaborador, fechaFin, titulo, status) => {
 	alert(fechaFin);
 	return (
@@ -171,6 +180,43 @@ $(function () {
 		$("#comentario").text("");
 	});
 });
+
+/***
+ * Cargar archivo a directorio
+ */
+var cargarArchivo = function(idTarea){
+		var form = $('#uploader')[0];
+		var formData = new FormData(form);
+		$.ajax({
+			url: "http://localhost:3001/fileupload",
+			data: formData,
+			type: "POST",
+			contentType: false,
+            processData: false,
+			success: function (res) {
+				$.ajax({
+					url: "http://localhost:3000/tarea/insertFile",
+					data: {
+						ruta: res.fileName,
+						idTarea: idTarea
+					},
+					type: "POST",
+					success: function (res) {
+						
+					},
+					error: function (error) {
+						console.log("error: " + error);
+					},
+				});
+
+
+			},
+			error: function (error) {
+				console.log("error: " + error);
+			},
+		});
+}
+
 
 /**
  * Poner un 0 si el número es menor a 10
