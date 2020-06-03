@@ -20,7 +20,7 @@ $(document).ready(() => {
 		sessionStorage.getItem("puesto") == "Empleado"
 	) {
 		$(".navLateral-body-tittle-menu").remove();
-		$(".nav").remove();
+		$(".navnav").remove();
 	}
 
 	// Aqui se inserta el código para meter los datos en el html
