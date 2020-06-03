@@ -21,7 +21,11 @@ const ingresar = () => {
 						sessionStorage.setItem("apellidomat", res.apellidomat);
 						sessionStorage.setItem("deparment", res.deparment);
 						sessionStorage.setItem("puesto", res.puesto);
-						window.location = "http://localhost:3001/tarea";
+						if (res.puesto !== "Trabajador" && res.puesto !== "Empleado") {
+							window.location = "http://localhost:3001/tarea";
+						} else {
+							window.location = "http://localhost:3001/tablatarea";
+						}
 					},
 					error: function (error) {
 						alert(`error: ${error.status}\n${error.responseJSON.msg}`);

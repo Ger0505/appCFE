@@ -15,12 +15,8 @@ $(function () {
 
 			for (let i = 0; i < res.response.length; i++) {
 				tablaBody.append(`<tr>
-                    <td class="mdl-data-table__cell--non-numeric">${
-											res.response[i].IdTarea
-										}</td>
-                    <td><a href="/tarea/details/id=${
-											res.response[i].IdTarea
-										}">${res.response[i].Titulo}</a></td>
+                    <td class="mdl-data-table__cell--non-numeric">${res.response[i].IdTarea}</td>
+                    <td><a href="/tarea/details/id=${res.response[i].IdTarea}">${res.response[i].Titulo}</a></td>
                     <td>${res.response[i].Status}</td>
                     <td>${res.response[i].Colaborador}</td>
                     <td>${res.response[i].Responsable}</td>
@@ -32,14 +28,7 @@ $(function () {
                                 
                             </button>
                             <div class="dropdown-menu">
-								<a class="dropdown-item" href="/tarea/actualizar/id=${
-									res.response[i].IdTarea
-								}">${`${
-					sessionStorage.getItem("puesto") == `Trabajador` ||
-					sessionStorage.getItem("puesto") == `Empleado`
-						? `Ver`
-						: `Editar`
-				}`}</a>
+                                <a class="dropdown-item" href="/tarea/actualizar/id=${res.response[i].IdTarea}">Editar</a>
                             </div>
                             </div>
                         </div>
