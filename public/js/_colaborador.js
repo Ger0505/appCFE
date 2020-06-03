@@ -43,7 +43,7 @@ $(function () {
 		},
 		error: function (error) {
 			console.log("error: " + error);
-		},
+		}
 	});
 });
 
@@ -61,28 +61,28 @@ $(function () {
 		var password = $("#password").val();
 		var rpassword = $("#rpassword").val();
 
-		if(password != rpassword){
+		if (password != rpassword) {
 			return;
 		}
 
 		$.ajax({
 			url: "http://localhost:3000/colaborador/insert",
 			data: {
-				nombre:nombre,
-				apellido1:apellido1,
-				apellido2:apellido2,
-				departamento:departamento,
-				puesto:puesto,
-				usuario:usuario,
-				password:password
+				nombre: nombre,
+				apellido1: apellido1,
+				apellido2: apellido2,
+				departamento: departamento,
+				puesto: puesto,
+				usuario: usuario,
+				password: password
 			},
 			type: "POST",
 			success: function (res) {
-				$(location).attr('href',"/colaborador");
+				$(location).attr("href", "/colaborador");
 			},
 			error: function (error) {
 				console.log("error: " + error);
-			},
+			}
 		});
 	});
 });
@@ -96,11 +96,11 @@ function eliminarColaborador(valor) {
 		data: {},
 		type: "PUT",
 		success: function (res) {
-			$(location).attr('href',"/colaborador");
+			$(location).attr("href", "/colaborador");
 		},
 		error: function (err) {
 			console.log(err);
-		},
+		}
 	});
 }
 
@@ -119,32 +119,47 @@ $(function () {
 		dataType: "json",
 		success: function (res) {
 			selectPuesto.empty();
-			selectPuesto.append(`<option value="" disabled="" selected="">PUESTO</option>`);
+			selectPuesto.append(
+				`<option value="" disabled="" selected="">PUESTO</option>`
+			);
 
 			for (let i = 0; i < res.response.length; i++) {
-				selectPuesto.append(`<option value="${res.response[i].IdPuesto}">${res.response[i].Descripcion}</option>`);
+				selectPuesto.append(
+					`<option value="${res.response[i].IdPuesto}">${res.response[i].Descripcion}</option>`
+				);
 			}
 		},
 		error: function (error) {
 			console.log("error: " + error);
-		},
+		}
 	});
+
+	let url =
+		sessionStorage.getItem("puesto") == "Jefe de Departamento"
+			? "http://localhost:3000/departamento/getdesc/" +
+			  sessionStorage.getItem("deparment")
+			: "http://localhost:3000/puesto/list";
+
 	$.ajax({
-		url: "http://localhost:3000/departamento/list",
+		url: url,
 		data: {},
 		type: "GET",
 		contentType: "application/json; charset=UTF-8",
 		dataType: "json",
 		success: function (res) {
 			selectDepartamento.empty();
-			selectDepartamento.append(`<option value="" disabled="" selected="">DEPARTAMENTO</option>`);
+			selectDepartamento.append(
+				`<option value="" disabled="" selected="">DEPARTAMENTO</option>`
+			);
 
 			for (let i = 0; i < res.response.length; i++) {
-				selectDepartamento.append(`<option value="${res.response[i].IdDepartamento}">${res.response[i].Descripcion}</option>`);
+				selectDepartamento.append(
+					`<option value="${res.response[i].IdDepartamento}">${res.response[i].Descripcion}</option>`
+				);
 			}
 		},
 		error: function (error) {
 			console.log("error: " + error);
-		},
+		}
 	});
 });
