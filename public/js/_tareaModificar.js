@@ -46,6 +46,7 @@ $(function () {
 			$("#descripcion").text(res.response[0].Descripcion);
 
 			agregarComentarios(id);
+			agregarFiles(id);
 		},
 		error: function (error) {
 			console.log("error: " + error);
@@ -76,6 +77,34 @@ var agregarComentarios = function (id) {
 					</div>
 				</section>`);
 				divComentarios.append(divComment);
+			}
+		},
+		error: function (error) {
+			console.log("error: " + error);
+		}
+	});
+};
+
+/**
+ * Agregar file a tabla
+ */
+var agregarFiles = function (id) {
+	var tbody = $("tbody");
+	$.ajax({
+		url: "http://localhost:3000/tarea/listFile/"+id,
+		data: {},
+		type: "GET",
+		contentType: "application/json; charset=UTF-8",
+		dataType: "json",
+		success: function (res) {
+			tbody.empty();
+			for (let i = 0; i < res.response.length; i++) {
+				tbody.append(`<tr>
+				<td>${res.response[i].Ruta}</td>
+				<td><button class='btn btn-primary' onclick="descargarArchivo('${res.response[i].Ruta}')"><i class="zmdi zmdi-download"></i></button></td>
+				<td><button class='btn btn-danger' onclick="eliminarArchivo('${res.response[i].Ruta}')"><i class="zmdi zmdi-delete"></i>
+				</button></td>            
+				</tr>`);
 			}
 		},
 		error: function (error) {
@@ -160,11 +189,103 @@ $(function () {
 	});
 });
 
+/**
+ *  Ver lista de archivos
+ */
 $(function(){
 	$("btnArchivo").click(function(e){
 		e.preventDefault();
+		var file = $('#file')[0].files[0] 
+		if (file){ 
+			console.log(file.name); 
+		}else{
+			alert("Fail");
+		}
 	});
 });
+
+/***
+ * Cargar archivo a directorio
+ */
+$(function(){
+	$("#uploader").submit(function(e){
+		var tbody = $('tbody');
+		e.preventDefault();
+		var form = $('#uploader')[0];
+		var formData = new FormData(form);
+		$.ajax({
+			url: "http://localhost:3001/fileupload",
+			data: formData,
+			type: "POST",
+			contentType: false,
+            processData: false,
+			success: function (res) {
+				var fila = $(`<tr>
+				<td>${res.fileName}</td>
+				<td><button class='btn btn-primary' onclick="descargarArchivo(${res.fileName})"><i class="zmdi zmdi-download"></i></button></td>
+				<td><button class='btn btn-danger' onclick="eliminarArchivo(${res.fileName})"><i class="zmdi zmdi-delete"></i>
+				</button></td>            
+				</tr>`);
+				
+				tbody.append(fila);
+
+				$.ajax({
+					url: "http://localhost:3000/tarea/insertFile",
+					data: {
+						ruta: res.fileName,
+						idTarea: $("#idTarea").text()
+					},
+					type: "POST",
+					success: function (res) {
+						
+					},
+					error: function (error) {
+						console.log("error: " + error);
+					},
+				});
+
+
+			},
+			error: function (error) {
+				console.log("error: " + error);
+			},
+		});
+	});
+});
+
+/**
+ * Descargar archivo
+ * @param {*} name 
+ */
+var descargarArchivo = function(name){
+	$.ajax({
+		url: "http://localhost:3001/descargarFile?name="+name,
+		data:{},
+		type: "GET",
+		contentType: false,
+		processData: false,
+		success: function (res) {
+			alert("Descargado");
+		},
+		error: function (err) {
+			console.log(err);
+		},
+	});
+} 
+
+var eliminarArchivo = function(name){
+	$.ajax({
+		url: "http://localhost:3000/tarea/deleteFile",
+		data: {name:name},
+		type: "PUT",
+		success: function (res) {
+			alert("Eliminado");
+		},
+		error: function (err) {
+			console.log(err);
+		},
+	});
+} 
 
 /**
  * Poner un 0 si el número es menor a 10

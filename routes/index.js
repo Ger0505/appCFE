@@ -115,9 +115,21 @@ router.post("/fileupload", function (req, res) {
 	file.mv("./files/" + file.name, function (error) {
 		if (error) return res.status(500).send({ message: error });
 
-		// return res.status(200).send(
-		// });
-		location.href = "/tareas";
+		return res.status(200).send(
+			{message:'Archivo Guardado de la tarea '+file.name,
+			fileName: file.name});
+	});
+});
+
+router.get("/descargarFile/:name", function (req, res, next) {
+	alert(req.params.name);
+	res.download(__dirname+'/files/'+req.params.name,
+	req.params.name,function(err){
+		if(err){
+			console.log(err);
+		}else{
+			console.log("Exito descarga");
+		}
 	});
 });
 
