@@ -102,6 +102,7 @@ $(function () {
 });
 
 const fieldvalidations = (colaborador, fechaFin, titulo, status) => {
+	alert(fechaFin);
 	return (
 		colaborador !== "COLABORADOR" &&
 		fechaFin !== "" &&

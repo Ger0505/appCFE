@@ -122,9 +122,9 @@ router.post("/fileupload", function (req, res) {
 });
 
 router.get("/descargarFile/:name", function (req, res, next) {
-	alert(req.params.name);
-	res.download(__dirname+'/files/'+req.params.name,
-	req.params.name,function(err){
+	alert(req.query.name);
+	res.download(__dirname+'/files/'+req.query.name,
+	req.query.name,function(err){
 		if(err){
 			console.log(err);
 		}else{
@@ -132,5 +132,18 @@ router.get("/descargarFile/:name", function (req, res, next) {
 		}
 	});
 });
+
+router.get('/getfiles', function (req, res) {
+	fs.readdir('./files', function (err, archivos) {
+	  if (err) {
+		onError(err);
+		return ;
+	  }
+  
+	  console.log(archivos);
+	  res.send(archivos);
+	
+	});
+  });
 
 module.exports = router;

@@ -180,7 +180,12 @@ $(function () {
 			},
 			type: "PUT",
 			success: function (res) {
-				$(location).attr('href',"/tarea");
+				var puesto = sessionStorage.getItem("puesto");
+				if(puesto === "Trabajador" || puesto === "Empleado"){
+					$(location).attr('href',"/tablatarea");
+				}else{
+					$(location).attr('href',"/tarea");
+				}
 			},
 			error: function (error) {
 				console.log("error: " + error);
@@ -222,8 +227,8 @@ $(function(){
 			success: function (res) {
 				var fila = $(`<tr>
 				<td>${res.fileName}</td>
-				<td><button class='btn btn-primary' onclick="descargarArchivo(${res.fileName})"><i class="zmdi zmdi-download"></i></button></td>
-				<td><button class='btn btn-danger' onclick="eliminarArchivo(${res.fileName})"><i class="zmdi zmdi-delete"></i>
+				<td><button class='btn btn-primary' onclick="descargarArchivo('${res.fileName}')"><i class="zmdi zmdi-download"></i></button></td>
+				<td><button class='btn btn-danger' onclick="eliminarArchivo('${res.fileName}')"><i class="zmdi zmdi-delete"></i>
 				</button></td>            
 				</tr>`);
 				
@@ -259,13 +264,11 @@ $(function(){
  */
 var descargarArchivo = function(name){
 	$.ajax({
-		url: "http://localhost:3001/descargarFile?name="+name,
-		data:{},
+		url: "http://localhost:3001/descargarFile",
+		data:{name:name},
 		type: "GET",
-		contentType: false,
-		processData: false,
 		success: function (res) {
-			alert("Descargado");
+			console.log(res);
 		},
 		error: function (err) {
 			console.log(err);

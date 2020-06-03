@@ -21,21 +21,6 @@ $(function () {
                     <td>${res.response[i].Colaborador}</td>
                     <td>${res.response[i].Responsable}</td>
                     
-                    <td>
-                        
-                        <div class="dropdown dropright">
-                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                                
-                            </button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="/tarea/actualizar/id=${res.response[i].IdTarea}">Editar</a>
-                            </div>
-                            </div>
-                        </div>
-                            
-                    
-                    </td>
-                    
                 </tr>`);
 			}
 		},
