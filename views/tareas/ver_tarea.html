@@ -13,8 +13,8 @@
 	<link rel="stylesheet" href="/css/material.min.css">
 	<link rel="stylesheet" href="/css/material-design-iconic-font.min.css">
 	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.css">
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/tabpanel.css" />
+	<link rel="stylesheet" href="/css/main.css">
+	<link rel="stylesheet" href="/css/tabpanel.css" />
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="/js/jquery-1.11.2.min.js"><\/script>')</script>
 	<script src="/js/material.min.js"></script>
@@ -23,9 +23,10 @@
 	<script src="/js/main.js"></script>
 	<script src="/js/_onload.js"></script>
 	<script src="/js/_tareaModificar.js"></script>
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Compiled and minified JavaScript -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>    --> -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>    -->
+	-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -211,7 +212,7 @@
 			<div class="full-width tittles navLateral-body-tittle-menu">
 				<i class="zmdi zmdi-desktop-mac"></i><span class="hide-on-tablet">&nbsp; TABLERO</span>
 			</div>
-			<nav class="full-width">
+			<nav class="full-width nav">
 				<ul class="full-width list-unstyle menu-principal">
 					<li class="full-width">
 						<a href="/colaborador" class="full-width">
@@ -283,87 +284,89 @@
 	</section>
 	<!-- pageContent -->
 	<section class="full-width pageContent">
-        <div class="full-width divider-menu-h"></div>
-        <!--Formulario-->
+		<div class="full-width divider-menu-h"></div>
+		<!--Formulario-->
 		<div class="mdl-grid">
 			<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--12-col-desktop">
-                <span style="font-size: 24px;" id="idTarea"></span>&nbsp;<span style="font-size: 24px;">Tarea</span>
-                <button class="btn btn-primary" style="float:right;" id="btnTarea">Guardar</button>
-                <input type="text" id="titulo" class="form-control mt-2" placeholder="Titulo de tarea" required disabled style="color: black;">
-            </div>
-            <div class="full-width mdl-grid">
-                <div
-                    class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<span style="font-size: 24px;" id="idTarea"></span>&nbsp;<span style="font-size: 24px;">Tarea</span>
+				<button class="btn btn-primary" style="float:right;" id="btnTarea">Guardar</button>
+				<input type="text" id="titulo" class="form-control mt-2" placeholder="Titulo de tarea" required disabled
+					style="color: black;">
+			</div>
+			<div class="full-width mdl-grid">
+				<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 						<input class="mdl-textfield__input" type="text" id="colaborador" disabled style="color: black;">
 						<label class="mdl-textfield__label" for="LastNameAdmin">COLABORADOR</label>
 
 					</div>
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 						<input class="mdl-textfield__input" type="text" id="fechaFin" disabled style="color: black;">
 						<label class="mdl-textfield__label" for="LastNameAdmin">FECHA DE ENTREGA</label>
 
 					</div>
 
-                </div>
-                <div
-                    class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
+				</div>
+				<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
 
-                    <div class="mdl-textfield mdl-js-textfield">
-                        <select class="mdl-textfield__input" id="status">
-                            <option value="" disabled="" selected="">STATUS</option>
-                        </select>
+					<div class="mdl-textfield mdl-js-textfield">
+						<select class="mdl-textfield__input" id="status">
+							<option value="" disabled="" selected="">STATUS</option>
+						</select>
 					</div>
-					
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-						<input class="mdl-textfield__input" type="text" id="actualStatus" disabled style="color: black;">
+
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<input class="mdl-textfield__input" type="text" id="actualStatus" disabled
+							style="color: black;">
 						<label class="mdl-textfield__label" for="actualStatus">STATUS ACTUAL</label>
 
 					</div>
 
-                </div>
-            </div>
-            <!--MENU-->
-            <div class="full-width">
-                <ul class="nav nav-pills">
-                    <li class="nav-item">
-                      <a class="nav-link active" data-toggle="pill" href="#menu1">Detalles</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" data-toggle="pill" href="#menu2" id="linkFile"><i class="zmdi zmdi-file"></i></a>
-                      <div class="mdl-tooltip" for="linkFile">Archivos</div>
-                    </li>
-                  </ul>
-            </div>
-              
-              <!-- Tab panes -->
-              <div class="tab-content full-width">
-                <!--Detalles-->
-                <div class="tab-pane container active" id="menu1">
-                    <h3>Descripci&oacute;n</h3>
-                    <textarea cols="30" rows="2" class="entrada full-width" id="descripcion" disabled></textarea>
-                    <h3>Comentarios</h3>
-                    <section id="comments-section">
+				</div>
+			</div>
+			<!--MENU-->
+			<div class="full-width">
+				<ul class="nav nav-pills">
+					<li class="nav-item">
+						<a class="nav-link active" data-toggle="pill" href="#menu1">Detalles</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" data-toggle="pill" href="#menu2" id="linkFile"><i
+								class="zmdi zmdi-file"></i></a>
+						<div class="mdl-tooltip" for="linkFile">Archivos</div>
+					</li>
+				</ul>
+			</div>
+
+			<!-- Tab panes -->
+			<div class="tab-content full-width">
+				<!--Detalles-->
+				<div class="tab-pane container active" id="menu1">
+					<h3>Descripci&oacute;n</h3>
+					<textarea cols="30" rows="2" class="entrada full-width" id="descripcion" disabled></textarea>
+					<h3>Comentarios</h3>
+					<section id="comments-section">
 						<div class="cajaComentarios">
 							<div>
-							<button class="botonestoolbox " onclick="activar(event)">B</button>
-							<button class="botonestoolbox " onclick="activar(event)">I</button>
-							<button class="botonestoolbox " onclick="activar(event)">U</button>
-							<button class="botonestoolbox " onclick="activar(event)"></button>
-							<button class="botonestoolbox " onclick="activar(event)">Icon</button>
-							<button class="botonestoolbox " onclick="activar(event)">Icon</button>
-							<button class="botonestoolbox " onclick="activar(event)">Icon</button>
-							<button class="botonestoolbox " onclick="activar(event)">Icon</button>
-							<button class="botonestoolbox " onclick="activar(event)"></button>
-							<button class="botonestoolbox " onclick="activar(event)">Icon</button>
-							<button class="botonestoolbox ">Imagen</button>
+								<button class="botonestoolbox " onclick="activar(event)">B</button>
+								<button class="botonestoolbox " onclick="activar(event)">I</button>
+								<button class="botonestoolbox " onclick="activar(event)">U</button>
+								<button class="botonestoolbox " onclick="activar(event)"></button>
+								<button class="botonestoolbox " onclick="activar(event)">Icon</button>
+								<button class="botonestoolbox " onclick="activar(event)">Icon</button>
+								<button class="botonestoolbox " onclick="activar(event)">Icon</button>
+								<button class="botonestoolbox " onclick="activar(event)">Icon</button>
+								<button class="botonestoolbox " onclick="activar(event)"></button>
+								<button class="botonestoolbox " onclick="activar(event)">Icon</button>
+								<button class="botonestoolbox ">Imagen</button>
 							</div>
 							<section name="" id="comentario" tabindex="1" contenteditable></section>
 							<center>
-							<button class="btn btn-secondary" id="btnAgregar">Agregar</button>
+								<button class="btn btn-secondary" id="btnAgregar">Agregar</button>
 							</center>
 						</div>
 						<hr />
+<<<<<<< HEAD
                     </section>
                 </div>
                 <!--Archivos-->
@@ -396,11 +399,48 @@
                         </table>
                 </div>
               </div>
+=======
+					</section>
+				</div>
+				<!--Archivos-->
+				<div class="tab-pane container fade" id="menu2">
+					<div class="mt-2">
+						<form ref='uploadForm' id='uploadForm' action="http://localhost:3001/fileupload" method="post"
+							encType="multipart/form-data">
+							<input type="file" class="form-control-file border" name="file">
+							<input type="submit" value="Cargar" class="btn btn-primary mt-4" id="btnArchivo" />
+						</form>
+					</div>
+					<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
+						<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp full-width table-responsive">
+							<thead>
+								<tr>
+									<th class="mdl-data-table__cell--non-numeric">idstatus</th>
+									<th>STATUS</th>
+									<th>DESCRIPCION</th>
+									<th>opciones</th>
+>>>>>>> Modificaciones empleado/trabajador ver tareas
 
-		</div>
-    </section>
-    <script src="/js/mostrarDiv.js"></script>
-    <script src="/js/togglebutton.js"></script>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="mdl-data-table__cell--non-numeric">Product Name</td>
+									<td>Product Code</td>
+									<td>7</td>
+									<td></td>
+
+								</tr>
+							</tbody>
+
+						</table>
+					</div>
+				</div>
+
+			</div>
+	</section>
+	<script src="/js/mostrarDiv.js"></script>
+	<script src="/js/togglebutton.js"></script>
 </body>
 
 </html>

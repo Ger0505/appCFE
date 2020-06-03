@@ -15,7 +15,13 @@ const getParameters = (nombreParametro) => {
 	return true;
 };
 $(document).ready(() => {
-	let id = getParameters("id");
+	if (
+		sessionStorage.getItem("puesto") == "Trabajador" ||
+		sessionStorage.getItem("puesto") == "Empleado"
+	) {
+		$(".navLateral-body-tittle-menu").remove();
+		$(".nav").remove();
+	}
 
 	// Aqui se inserta el código para meter los datos en el html
 	// por ejemplo;
