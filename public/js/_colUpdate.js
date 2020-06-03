@@ -29,7 +29,7 @@ $(function () {
 	});
 
 	let url =
-		sessionStorage.getItem("puesto") == "Jefe de Departamento"
+		sessionStorage.getItem("puesto") === "Jefe de Departamento"
 			? "http://localhost:3000/departamento/getdesc/" +
 			  sessionStorage.getItem("deparment")
 			: "http://localhost:3000/puesto/list";
