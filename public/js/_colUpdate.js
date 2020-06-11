@@ -14,7 +14,7 @@ $(function () {
 		success: function (res) {
 			selectPuesto.empty();
 			selectPuesto.append(
-				`<option value="" disabled="" selected="">DEPARTAMENTO</option>`
+				`<option value="" disabled="" selected="">PUESTOS</option>`
 			);
 
 			for (let i = 0; i < res.response.length; i++) {

@@ -79,7 +79,7 @@ function eliminarStatus(valor) {
 		data: {},
 		type: "PUT",
 		success: function (res) {
-			//$(location).attr('href',"/status");
+			$(location).attr('href',"/status");
 		},
 		error: function (error) {
 			console.log(error);
