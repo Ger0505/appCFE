@@ -26,7 +26,7 @@ const promesa = (JSON, req) => {
 				apellidopat: req.session.apellidopat,
 				apellidomat: req.session.apellidomat,
 				deparment: req.session.deparment,
-				puesto: req.session.puesto
+				puesto: req.session.puesto,
 			});
 		} else {
 			reject({
@@ -115,35 +115,38 @@ router.post("/fileupload", function (req, res) {
 	file.mv("./files/" + file.name, function (error) {
 		if (error) return res.status(500).send({ message: error });
 
-		return res.status(200).send(
-			{message:'Archivo Guardado de la tarea '+file.name,
-			fileName: file.name});
+		return res.status(200).send({
+			message: "Archivo Guardado de la tarea " + file.name,
+			fileName: file.name
+		});
 	});
 });
 
 router.get("/descargarFile/:name", function (req, res, next) {
 	alert(req.query.name);
-	res.download(__dirname+'/files/'+req.query.name,
-	req.query.name,function(err){
-		if(err){
-			console.log(err);
-		}else{
-			console.log("Exito descarga");
+	res.download(
+		__dirname + "/files/" + req.query.name,
+		req.query.name,
+		function (err) {
+			if (err) {
+				console.log(err);
+			} else {
+				console.log("Exito descarga");
+			}
 		}
-	});
+	);
 });
 
-router.get('/getfiles', function (req, res) {
-	fs.readdir('./files', function (err, archivos) {
-	  if (err) {
-		onError(err);
-		return ;
-	  }
-  
-	  console.log(archivos);
-	  res.send(archivos);
-	
+router.get("/getfiles", function (req, res) {
+	fs.readdir("./files", function (err, archivos) {
+		if (err) {
+			onError(err);
+			return;
+		}
+
+		console.log(archivos);
+		res.send(archivos);
 	});
-  });
+});
 
 module.exports = router;

@@ -4,6 +4,9 @@
 $(function () {
 	var tablaBody = $("tbody");
 	var id = sessionStorage.getItem("id");
+	if (id === null || id === undefined) {
+		window.location = "http://localhost:3001/";
+	}
 	$.ajax({
 		url: "http://localhost:3000/tarea/list/" + id,
 		data: {},
