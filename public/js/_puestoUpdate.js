@@ -27,6 +27,11 @@ $(function () {
 		var id = getParameters("id");
 		var descripcion = $("#descripcion").val();
 
+		if(descripcion === ""){
+			alert("Valor no válido");
+			return;
+		}
+
 		$.ajax({
 			url: "http://localhost:3000/puesto/update",
 			data: {

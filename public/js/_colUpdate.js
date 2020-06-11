@@ -4,7 +4,7 @@
 $(function () {
 	var selectPuesto = $("#puesto");
 	var selectDepartamento = $("#departamento");
-
+	////// Puestos
 	$.ajax({
 		url: "http://localhost:3000/puesto/list",
 		data: {},
@@ -14,20 +14,20 @@ $(function () {
 		success: function (res) {
 			selectPuesto.empty();
 			selectPuesto.append(
-				`<option value="" disabled="" selected="">PUESTO</option>`
+				`<option value="" disabled="" selected="">DEPARTAMENTO</option>`
 			);
 
 			for (let i = 0; i < res.response.length; i++) {
 				selectPuesto.append(
-					`<option value="${res.response[i].IdPuesto}">${res.response[i].Descripcion}</option>`
+					`<option value="${res.response[i].IdDepartamento}">${res.response[i].Descripcion}</option>`
 				);
 			}
 		},
 		error: function (error) {
 			console.log("error: " + error);
 		}
-	});
-
+	});	
+	////// Departamentos	
 	let url =
 		sessionStorage.getItem("puesto") === "Jefe de Departamento"
 			? "http://localhost:3000/departamento/getdesc/" +
