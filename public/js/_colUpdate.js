@@ -32,7 +32,7 @@ $(function () {
 		sessionStorage.getItem("puesto") === "Jefe de Departamento"
 			? "http://localhost:3000/departamento/getdesc/" +
 			  sessionStorage.getItem("deparment")
-			: "http://localhost:3000/puesto/list";
+			: "http://localhost:3000/departamento/list";
 
 	$.ajax({
 		url: url,
