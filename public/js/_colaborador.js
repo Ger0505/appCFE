@@ -125,7 +125,7 @@ $(function () {
 
 			for (let i = 0; i < res.response.length; i++) {
 				selectPuesto.append(
-					`<option value="${res.response[i].IdDepartamento}">${res.response[i].Descripcion}</option>`
+					`<option value="${res.response[i].IdPuesto}">${res.response[i].Descripcion}</option>`
 				);
 			}
 		},
